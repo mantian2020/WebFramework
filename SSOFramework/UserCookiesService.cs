@@ -23,22 +23,16 @@ namespace SSOFramework
 
         public override string SerializeUserInfo(UserInfo user)
         {
-            return string.Format("{0}${1}", iSymmetricSecurity.Encrypt(user.UserName),
-                iSymmetricSecurity.Encrypt(user.Code));
+            return iSymmetricSecurity.Encrypt(SerializeHelper.SerializeData<UserInfo>(user));
         }
 
         public override UserInfo DeserializeUserInfo(string userData)
         {
             string[] msg = userData.Split('$');
 
-            if (2 == msg.Length)
+            if (!string.IsNullOrEmpty(userData))
             {
-                UserInfo simpleUser = new UserInfo();
-
-                simpleUser.UserName = iSymmetricSecurity.Decrypt(msg[0]);
-                simpleUser.Code = iSymmetricSecurity.Decrypt(msg[1]);
-
-                return simpleUser;
+                return SerializeHelper.Deserialize<UserInfo>(iSymmetricSecurity.Decrypt(userData));
             }
             else
             {
