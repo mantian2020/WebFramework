@@ -28,8 +28,6 @@ namespace SSOFramework
 
         public override UserInfo DeserializeUserInfo(string userData)
         {
-            string[] msg = userData.Split('$');
-
             if (!string.IsNullOrEmpty(userData))
             {
                 return SerializeHelper.Deserialize<UserInfo>(iSymmetricSecurity.Decrypt(userData));
