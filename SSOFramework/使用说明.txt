@@ -25,3 +25,6 @@ decryption="AES"
 	<!--拒绝所有匿名用户-->
 	<deny users="?"/>
 </authorization>
+
+生成MachineKey：
+CommonHelper.Config.GenerateMachineKey();
