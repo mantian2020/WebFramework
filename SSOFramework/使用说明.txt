@@ -1,0 +1,11 @@
+﻿依赖项：
+Newtonsoft.Json
+CommonHelper
+log4net
+
+登录：
+UserCookiesService sso = new UserCookiesService();
+sso.SignLogin(new SSOFramework.UserInfo() { UserName = username,Code=password});
+验证登录：
+UserCookiesService sso = new UserCookiesService();
+CommonHelper.Entity.ResultInfo<SSOFramework.UserInfo> result = sso.CheckLogin();
