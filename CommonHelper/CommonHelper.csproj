@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -37,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +50,9 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="Entity\ResultInfo.cs" />
+    <Compile Include="Log\ILogService.cs" />
+    <Compile Include="Log\LogFactory.cs" />
+    <Compile Include="Log\LogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\IAsymmetricSecurity.cs" />
     <Compile Include="Security\ISymmetricSecurity.cs" />
@@ -54,6 +61,7 @@
     <Compile Include="Security\SymmetricSecurity.cs" />
     <Compile Include="Security\TripleDESOperate.cs" />
     <Compile Include="SerializeHelper.cs" />
+    <Compile Include="WebServiceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

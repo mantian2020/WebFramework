@@ -5,3 +5,5 @@ E:\工作项目\git\WebFramework\SSOFramework\obj\Debug\SSOFramework.dll
 E:\工作项目\git\WebFramework\SSOFramework\obj\Debug\SSOFramework.pdb
 E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\CommonHelper.dll
 E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\CommonHelper.pdb
+E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\Newtonsoft.Json.dll
+E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\Newtonsoft.Json.xml
