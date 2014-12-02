@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Security;
 using CommonHelper.Entity;
+using CommonHelper.Log;
 
 namespace SSOFramework
 {
     public abstract class BaseSsO<T> where T : class 
     {
+        private ILogService logger = LogFactory.GetScorer(ScorerCategory.Log4net, typeof(BaseSsO<T>)); 
         protected int expiresMinutes = 20;
         private string domain = string.Empty;
 
@@ -114,6 +116,7 @@ namespace SSOFramework
         /// <returns>加密的cookie</returns>
         protected virtual HttpCookie GetAuthCookie(string userData, string userName)
         {
+            logger.Info("userData:" + userData + ",userName:" + userName + ",Domain:" + this.domain + ",Minutes:" + this.expiresMinutes);
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
                 2,
                 userName,
