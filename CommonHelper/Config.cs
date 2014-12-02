@@ -26,8 +26,8 @@ namespace CommonHelper
         public static string GenerateMachineKey()
         {
             String[] commandLineArgs = System.Environment.GetCommandLineArgs();
-            string decryptionKey = CreateKey(System.Convert.ToInt32(commandLineArgs[1]));
-            string validationKey = CreateKey(System.Convert.ToInt32(commandLineArgs[2]));
+            string decryptionKey = CreateKey(20);
+            string validationKey = CreateKey(24);
             return string.Format("<machineKey validationKey=\"{0}\" decryptionKey=\"{1}\" validation=\"SHA1\"/>",
                 validationKey, decryptionKey);
         }
