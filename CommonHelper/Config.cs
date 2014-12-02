@@ -26,29 +26,30 @@ namespace CommonHelper
         public static string GenerateMachineKey()
         {
             String[] commandLineArgs = System.Environment.GetCommandLineArgs();
-            string decryptionKey = CreateKey(20);
-            string validationKey = CreateKey(24);
+            string decryptionKey = CreateKey(48);
+            string validationKey = CreateKey(128);
             return string.Format("<machineKey validationKey=\"{0}\" decryptionKey=\"{1}\" validation=\"SHA1\"/>",
                 validationKey, decryptionKey);
         }
 
-        private static String CreateKey(int numBytes)
+        private static String CreateKey(int length)
         {
+            // 要返回的字符格式为16进制,byte最大值255
+            // 需要2个16进制数保存1个byte,因此除2
+            byte[] random = new byte[length / 2];
+
+            // 使用加密服务提供程序 (CSP) 提供的实现来实现加密随机数生成器 (RNG)
             RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-            byte[] buff = new byte[numBytes];
-            rng.GetBytes(buff);
-            return BytesToHexString(buff);
-        }
 
-        private static string BytesToHexString(byte[] bytes) 
-        {
-            StringBuilder hexString = new StringBuilder(64);
+            // 用经过加密的强随机值序列填充字节数组
+            rng.GetBytes(random);
 
-            for (int counter = 0; counter < bytes.Length; counter++) 
+            StringBuilder machineKey = new StringBuilder(length);
+            for (int i = 0; i < random.Length; i++)
             {
-                hexString.Append(String.Format("{0:X2}", bytes[counter]));
+                machineKey.Append(string.Format("{0:X2}", random[i]));
             }
-            return hexString.ToString();
+            return machineKey.ToString();
         }
     }
 }
