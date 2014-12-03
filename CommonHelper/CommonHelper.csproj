@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="Entity\ResultInfo.cs" />
+    <Compile Include="FileHelper.cs" />
     <Compile Include="Log\ILogService.cs" />
     <Compile Include="Log\LogFactory.cs" />
     <Compile Include="Log\LogService.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Security\SymmetricSecurity.cs" />
     <Compile Include="Security\TripleDESOperate.cs" />
     <Compile Include="SerializeHelper.cs" />
+    <Compile Include="StringHelper.cs" />
     <Compile Include="WebServiceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
