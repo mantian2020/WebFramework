@@ -1,0 +1,645 @@
+2014-12-04 18:04:41,713 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Initializing pool with following settings: \n\tinitial connections: 3\n\tminimum connections: 3\n\tmaximum connections: 1024\n
+2014-12-04 18:04:41,724 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Added 127.0.0.1:11211 to server bucket
+2014-12-04 18:04:41,725 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Creating initial connections 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:41,928 [13] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:42,277 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 1 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,278 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 1 for host 127.0.0.1:11211
+2014-12-04 18:04:42,284 [14] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:42,303 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 2 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,303 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 2 for host 127.0.0.1:11211
+2014-12-04 18:04:42,308 [15] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:42,328 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,328 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 3 for host 127.0.0.1:11211
+2014-12-04 18:04:42,364 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Cache socket pick asdf <null>
+2014-12-04 18:04:42,368 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Moving socket for host 127.0.0.1:11211 to busy pool ... socket: 1
+2014-12-04 18:04:42,371 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,371 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 2
+2014-12-04 18:04:42,371 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Need to create 1 new sockets for pool for host: 127.0.0.1:11211
+2014-12-04 18:04:42,378 [17] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:42,396 [9] DEBUG Memcached.ClientLibrary.SockIO  - Marking socket 1 as closed and available to return to avail pool
+2014-12-04 18:04:42,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 4 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 1
+2014-12-04 18:04:42,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,400 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Calling check-in on socket: 1 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,400 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Removing socket (1) from busy pool for host: 127.0.0.1:11211
+2014-12-04 18:04:42,401 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Returning socket (1 to avail pool for host: 127.0.0.1:11211
+2014-12-04 18:04:42,402 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Cache socket pick asdf <null>
+2014-12-04 18:04:42,402 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Moving socket for host 127.0.0.1:11211 to busy pool ... socket: 4
+2014-12-04 18:04:42,402 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - Memcached get command: get asdf
+
+2014-12-04 18:04:42,404 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - Load items line: VALUE asdf 0 6
+2014-12-04 18:04:42,404 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - \tkey: asdf; flags: 0; length: 6
+2014-12-04 18:04:42,405 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - Load items line: END
+2014-12-04 18:04:42,405 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - Finished reading from cache server
+2014-12-04 18:04:42,405 [9] DEBUG Memcached.ClientLibrary.MemcachedClient  - memcached: got back 1 results
+2014-12-04 18:04:42,405 [9] DEBUG Memcached.ClientLibrary.SockIO  - Marking socket 4 as closed and available to return to avail pool
+2014-12-04 18:04:42,406 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Calling check-in on socket: 4 for host: 127.0.0.1:11211
+2014-12-04 18:04:42,406 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Removing socket (4) from busy pool for host: 127.0.0.1:11211
+2014-12-04 18:04:42,406 [9] DEBUG Memcached.ClientLibrary.SockIOPool  - Returning socket (4 to avail pool for host: 127.0.0.1:11211
+2014-12-04 18:04:42,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,643 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,644 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,644 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,644 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,674 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,674 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,674 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,674 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,704 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,704 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,704 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,704 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,738 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,738 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,738 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,738 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,768 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,768 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,768 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,768 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,799 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,799 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,799 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,799 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,829 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,829 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,829 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,829 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,859 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,859 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,859 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,859 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,889 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,889 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,889 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,889 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,919 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,919 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,919 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,919 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,949 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,949 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,949 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,949 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:42,979 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:42,979 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:42,979 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:42,979 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,009 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,009 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,009 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,009 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,039 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,039 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,039 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,039 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,069 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,069 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,069 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,069 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,099 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,099 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,099 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,099 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,129 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,129 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,129 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,129 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,159 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,159 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,159 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,159 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,189 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,189 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,189 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,189 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,219 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,219 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,219 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,219 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,249 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,249 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,249 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,249 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,279 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,279 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,279 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,279 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,310 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,310 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,310 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,310 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,340 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,340 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,340 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,340 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,370 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,370 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,370 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,370 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,400 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,430 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,460 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,490 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,520 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,550 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,580 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,610 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,640 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,640 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,640 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,640 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,670 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,670 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,670 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,670 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,700 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,700 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,700 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,700 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,730 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,730 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,730 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,730 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,760 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,760 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,760 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,760 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,790 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,790 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,790 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,790 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,820 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,820 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,820 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,820 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,850 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,850 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,850 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,850 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,880 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,880 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,880 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,880 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,910 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,910 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,910 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,910 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,940 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,940 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,945 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,946 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:43,976 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:43,976 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:43,976 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:43,976 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,006 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,006 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,006 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,006 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,037 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,038 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,038 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,038 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,068 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,068 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,068 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,068 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,098 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,098 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,098 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,098 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,128 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,128 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,128 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,128 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,158 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,158 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,158 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,158 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,188 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,188 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,188 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,188 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,218 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,218 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,218 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,218 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,248 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,248 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,248 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,248 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,278 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,278 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,278 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,278 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,308 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,308 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,308 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,308 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,338 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,338 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,338 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,338 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,368 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,368 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,368 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,368 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,398 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,398 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,398 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,398 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,428 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,428 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,428 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,428 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,458 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,458 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,458 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,458 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,488 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,488 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,488 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,488 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,518 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,518 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,518 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,518 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:44,548 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:44,548 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 4
+2014-12-04 18:04:44,548 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:44,548 [16] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,301 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Initializing pool with following settings: \n\tinitial connections: 3\n\tminimum connections: 3\n\tmaximum connections: 1024\n
+2014-12-04 18:04:52,312 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Added 127.0.0.1:11211 to server bucket
+2014-12-04 18:04:52,312 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Creating initial connections 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,328 [14] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:52,346 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 1 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,347 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 1 for host 127.0.0.1:11211
+2014-12-04 18:04:52,350 [15] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:52,373 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 2 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,373 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 2 for host 127.0.0.1:11211
+2014-12-04 18:04:52,376 [16] DEBUG Memcached.ClientLibrary.SockIO+ConnectThread  - Socket creation thread leaving for host: 127.0.0.1
+2014-12-04 18:04:52,398 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created socket 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,398 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Created and added socket: 3 for host 127.0.0.1:11211
+2014-12-04 18:04:52,416 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Cache socket pick asdf <null>
+2014-12-04 18:04:52,418 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Moving socket for host 127.0.0.1:11211 to busy pool ... socket: 3
+2014-12-04 18:04:52,422 [11] DEBUG Memcached.ClientLibrary.SockIO  - Marking socket 3 as closed and available to return to avail pool
+2014-12-04 18:04:52,423 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Calling check-in on socket: 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,423 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Removing socket (3) from busy pool for host: 127.0.0.1:11211
+2014-12-04 18:04:52,423 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Returning socket (3 to avail pool for host: 127.0.0.1:11211
+2014-12-04 18:04:52,424 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Cache socket pick asdf <null>
+2014-12-04 18:04:52,424 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Moving socket for host 127.0.0.1:11211 to busy pool ... socket: 3
+2014-12-04 18:04:52,424 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - Memcached get command: get asdf
+
+2014-12-04 18:04:52,426 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - Load items line: VALUE asdf 0 6
+2014-12-04 18:04:52,426 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - \tkey: asdf; flags: 0; length: 6
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - Load items line: END
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - Finished reading from cache server
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.MemcachedClient  - memcached: got back 1 results
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.SockIO  - Marking socket 3 as closed and available to return to avail pool
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Calling check-in on socket: 3 for host: 127.0.0.1:11211
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Removing socket (3) from busy pool for host: 127.0.0.1:11211
+2014-12-04 18:04:52,427 [11] DEBUG Memcached.ClientLibrary.SockIOPool  - Returning socket (3 to avail pool for host: 127.0.0.1:11211
+2014-12-04 18:04:52,436 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,436 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,436 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,436 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,466 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,466 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,466 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,466 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,496 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,496 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,496 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,496 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,526 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,526 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,526 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,526 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,556 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,556 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,556 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,556 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,586 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,586 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,586 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,586 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,616 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,616 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,616 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,616 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,646 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,646 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,646 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,646 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,676 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,676 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,676 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,676 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,706 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,706 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,706 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,706 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,740 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,740 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,741 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,741 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,771 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,771 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,771 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,771 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,801 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,801 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,801 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,801 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,831 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,831 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,831 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,831 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,861 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,861 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,861 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,861 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,891 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,891 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,891 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,891 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,921 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,921 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,921 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,921 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,951 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,951 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,951 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,951 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:52,981 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:52,981 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:52,981 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:52,981 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,011 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,011 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,011 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,011 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,041 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,041 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,042 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,042 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,072 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,072 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,072 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,072 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,102 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,102 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,102 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,102 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,132 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,132 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,132 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,132 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,162 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,162 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,162 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,162 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,192 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,192 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,192 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,192 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,222 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,222 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,222 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,222 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,252 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,252 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,252 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,252 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,282 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,282 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,282 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,282 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,312 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,312 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,312 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,312 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,342 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,342 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,342 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,342 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,372 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,372 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,372 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,372 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,402 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,402 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,402 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,402 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,432 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,432 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,432 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,432 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,462 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,462 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,462 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,462 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,493 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,493 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,493 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,493 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,523 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,523 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,523 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,523 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,553 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,553 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,553 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,553 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,583 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,583 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,583 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,583 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,613 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,613 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,613 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,613 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,643 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,643 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,643 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,643 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,673 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,673 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,673 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,673 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,703 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,703 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,703 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,703 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,733 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,733 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,733 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,733 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,763 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,763 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,763 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,763 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,793 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,793 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,793 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,793 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,823 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,823 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,823 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,823 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,853 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,853 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,853 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,853 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,883 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,883 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,883 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,883 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,913 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,913 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,913 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,913 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,943 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,943 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,943 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,943 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:53,973 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:53,973 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:53,973 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:53,973 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,003 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,003 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,003 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,003 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,033 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,033 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,033 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,033 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,063 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,063 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,063 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,063 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,093 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,093 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,093 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,093 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,123 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,123 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,123 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,123 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,153 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,153 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,153 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,153 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,183 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,183 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,183 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,183 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,213 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,213 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,213 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,213 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,243 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,243 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,243 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,243 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,273 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,277 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,277 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,277 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,307 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,307 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,307 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,307 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,337 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,337 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,337 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,337 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,367 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,367 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,367 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,367 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,397 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,397 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,397 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,397 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,427 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,427 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,427 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,427 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,457 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,457 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,457 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,457 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,487 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,487 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,487 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,487 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,517 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,517 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,517 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,517 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,547 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,547 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,547 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,547 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,577 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,577 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,577 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,577 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.
+2014-12-04 18:04:54,607 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Starting self maintenance....
+2014-12-04 18:04:54,607 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of avail pool for host 127.0.0.1:11211 = 3
+2014-12-04 18:04:54,607 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Size of busy pool for host 127.0.0.1:11211 = 0
+2014-12-04 18:04:54,607 [17] DEBUG Memcached.ClientLibrary.SockIOPool  - Ending self maintenance.

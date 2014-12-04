@@ -1,0 +1,8 @@
+2014-12-04 18:04:42,369 [9] INFO  Memcached.ClientLibrary.MemcachedClient  - Storing with native handler...
+2014-12-04 18:04:42,395 [9] INFO  Memcached.ClientLibrary.MemcachedClient  - memcached cmd (result code): set asdf 0 59999 6
+ (STORED)
+2014-12-04 18:04:42,395 [9] INFO  Memcached.ClientLibrary.MemcachedClient  - Data stored successfully with key: asdf
+2014-12-04 18:04:52,419 [11] INFO  Memcached.ClientLibrary.MemcachedClient  - Storing with native handler...
+2014-12-04 18:04:52,422 [11] INFO  Memcached.ClientLibrary.MemcachedClient  - memcached cmd (result code): set asdf 0 59999 6
+ (STORED)
+2014-12-04 18:04:52,422 [11] INFO  Memcached.ClientLibrary.MemcachedClient  - Data stored successfully with key: asdf

@@ -1,0 +1,15 @@
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\TestFramework.exe.config
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\TestFramework.exe
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\TestFramework.pdb
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\CacheFramework.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\CommonHelper.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\Memcached.ClientLibrary.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\log4net.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\Newtonsoft.Json.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\CacheFramework.pdb
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\CommonHelper.pdb
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\Newtonsoft.Json.xml
+E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.csprojResolveAssemblyReference.cache
+E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.exe
+E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.pdb

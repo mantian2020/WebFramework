@@ -1,0 +1,109 @@
+﻿memcache安装：
+1. 下载memcache的windows稳定版，解压放某个盘下面，比如在c:\memcached
+2. 在终端（也即cmd命令界面）下输入 'c:\memcached\memcached.exe -d install' 安装
+3. 再输入： 'c:\memcached\memcached.exe -d start' 启动。NOTE: 以后memcached将作为windows的一个服务每次开机时自动启动。
+4. 测试是否成功：telnet 127.0.0.1 11211，然后输入stats
+
+memcached的基本设置：
+-p 监听的端口
+-l 连接的IP地址, 默认是本机
+-d start 启动memcached服务
+-d restart 重起memcached服务
+-d stop|shutdown 关闭正在运行的memcached服务
+-d install 安装memcached服务
+-d uninstall 卸载memcached服务
+-u 以的身份运行 (仅在以root运行的时候有效)
+-m 最大内存使用，单位MB。默认64MB
+-M 内存耗尽时返回错误，而不是删除项
+-c 最大同时连接数，默认是1024
+-f 块大小增长因子，默认是1.25
+-n 最小分配空间，key+value+flags默认是48
+-h 显示帮助
+
+memcached.config配置文件：
+<?xml version="1.0" encoding="utf-8"?>
+<MemCachedConfigInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ApplyMemCached>true</ApplyMemCached>
+  <ServerList>127.0.0.1:11211</ServerList>
+  <PoolName>wowo</PoolName>
+  <IntConnections>3</IntConnections>
+  <MinConnections>3</MinConnections>
+  <MaxConnections>1024</MaxConnections>
+  <SocketConnectTimeout>1000</SocketConnectTimeout>
+  <SocketTimeout>3000</SocketTimeout>
+  <MaintenanceSleep>30</MaintenanceSleep>
+  <FailOver>true</FailOver>
+  <Nagle>false</Nagle>
+  <LocalCacheTime>30000</LocalCacheTime>
+</MemCachedConfigInfo>
+
+依赖项：
+log4net.dll
+Memcached.ClientLibrary.dll
+ICSharpCode.SharpZipLib.dll
+CommonHelper.dll
+
+步驟：
+1.添加log4net.dll和配置文件
+<configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net"/>
+  </configSections>
+  <log4net>
+    <appender name="ErrorLog" type="log4net.Appender.RollingFileAppender">
+      <param name="File" value="log\Error.Log.txt"/>
+      <param name="AppendToFile" value="true"/>
+      <param name="MaxSizeRollBackups" value="10"/>
+      <param name="MaximumFileSize" value="1MB"/>
+      <param name="RollingStyle" value="Size"/>
+      <param name="StaticLogFileName" value="true"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c  - %m%n"/>
+      </layout>
+      <filter type="log4net.Filter.LevelRangeFilter">
+        <param name="LevelMax" value="ERROR"/>
+        <param name="LevelMin" value="ERROR"/>
+      </filter>
+    </appender>
+    <appender name="InfoLog" type="log4net.Appender.RollingFileAppender">
+      <param name="File" value="log\Info.Log.txt"/>
+      <param name="AppendToFile" value="true"/>
+      <param name="MaxSizeRollBackups" value="10"/>
+      <param name="MaximumFileSize" value="1MB"/>
+      <param name="RollingStyle" value="Size"/>
+      <param name="StaticLogFileName" value="true"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c  - %m%n"/>
+      </layout>
+      <filter type="log4net.Filter.LevelRangeFilter">
+        <param name="LevelMax" value="INFO"/>
+        <param name="LevelMin" value="INFO"/>
+      </filter>
+    </appender>
+    <appender name="DebugLog" type="log4net.Appender.RollingFileAppender">
+      <param name="File" value="log\Debug.Log.txt"/>
+      <param name="AppendToFile" value="true"/>
+      <param name="MaxSizeRollBackups" value="10"/>
+      <param name="MaximumFileSize" value="1MB"/>
+      <param name="RollingStyle" value="Size"/>
+      <param name="StaticLogFileName" value="true"/>
+      <layout type="log4net.Layout.PatternLayout">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c  - %m%n"/>
+      </layout>
+      <filter type="log4net.Filter.LevelRangeFilter">
+        <param name="LevelMax" value="DEBUG"/>
+        <param name="LevelMin" value="DEBUG"/>
+      </filter>
+    </appender>
+    <root>
+      <level value="all"/>
+      <appender-ref ref="InfoLog"/>
+      <appender-ref ref="ErrorLog"/>
+      <appender-ref ref="DebugLog"/>
+    </root>
+  </log4net>
+  2.添加config/memcached.config
+  3.调用
+  TianTianCache.CacheStrategy.AddObject("asdf","12123");
+  TianTianCache.CacheStrategy.RetrieveObject("asdf");
+
+
