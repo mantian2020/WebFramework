@@ -207,6 +207,6 @@ namespace DAOFramework
         /// 测试数据库链接
         /// </summary>
         /// <returns>是否链接成功</returns>
-        bool TestConnection();
+        bool TestConnection(string connectionString);
     }
 }
