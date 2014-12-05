@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CacheFramework;
 using CacheFramework.Config;
 using CommonHelper;
+using DAOFramework;
 
 namespace TestFramework
 {
@@ -29,9 +30,12 @@ namespace TestFramework
             memCachedConfigInfo.SocketTimeout = 3000;
             Console.WriteLine(SerializeHelper.Serialize(memCachedConfigInfo));
             */
-            TianTianCache.CacheStrategy.AddObject("asdf","12123");
-            Console.WriteLine(TianTianCache.CacheStrategy.RetrieveObject("asdf"));
-            
+            //TianTianCache.CacheStrategy.AddObject("asdf","12123");
+            //Console.WriteLine(TianTianCache.CacheStrategy.RetrieveObject("asdf"));
+            IDataHelper dataHelper = new MySqlDataHelper();
+            string connstr = "server=10.9.210.33;port=3307;database=wdtorder;user id=Swdtapp;password=OJ3WoZCWGrZuiQ95QOl8;pooling= true;charset=utf8";
+            object result = dataHelper.ExecuteScalar(connstr, "SELECT order_id FROM wdt_order_info LIMIT 1");
+            Console.WriteLine(result.ToString());
 
             Console.Read();
         }
