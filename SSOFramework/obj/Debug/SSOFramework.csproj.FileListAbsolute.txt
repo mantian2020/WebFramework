@@ -1,6 +1,5 @@
 E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\SSOFramework.dll
 E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\SSOFramework.pdb
-E:\工作项目\git\WebFramework\SSOFramework\obj\Debug\SSOFramework.csprojResolveAssemblyReference.cache
 E:\工作项目\git\WebFramework\SSOFramework\obj\Debug\SSOFramework.dll
 E:\工作项目\git\WebFramework\SSOFramework\obj\Debug\SSOFramework.pdb
 E:\工作项目\git\WebFramework\SSOFramework\bin\Debug\CommonHelper.dll
