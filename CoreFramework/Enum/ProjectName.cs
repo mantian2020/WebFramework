@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoreFramework
+namespace CoreFramework.Enum
 {
-    public class Class1
+    public struct ProjectName
     {
+        public static string Authority = "Authority";
     }
 }

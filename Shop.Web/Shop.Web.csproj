@@ -108,9 +108,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +115,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Authority\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -125,15 +126,25 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreFramework\CoreFramework.csproj">
+      <Project>{f57d8bb9-7d1c-4844-adc6-0e7a8eff7c87}</Project>
+      <Name>CoreFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop.Authority\Shop.Authority.csproj">
+      <Project>{5a5c83a3-2f95-4017-9cb1-709bafb1976b}</Project>
+      <Name>Shop.Authority</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

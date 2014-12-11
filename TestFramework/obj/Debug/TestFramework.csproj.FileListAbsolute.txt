@@ -13,3 +13,6 @@ E:\工作项目\git\WebFramework\TestFramework\bin\Debug\Newtonsoft.Json.xml
 E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.csprojResolveAssemblyReference.cache
 E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.exe
 E:\工作项目\git\WebFramework\TestFramework\obj\Debug\TestFramework.pdb
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\DAOFramework.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\MySql.Data.dll
+E:\工作项目\git\WebFramework\TestFramework\bin\Debug\DAOFramework.pdb
