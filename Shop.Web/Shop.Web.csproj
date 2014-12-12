@@ -114,7 +114,90 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="bootstrap\css\bootstrap-wysihtml5.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\colorpicker.css" />
+    <Content Include="bootstrap\css\datepicker.css" />
+    <Content Include="bootstrap\css\fullcalendar.css" />
+    <Content Include="bootstrap\css\jquery.gritter.css" />
+    <Content Include="bootstrap\css\matrix-login.css" />
+    <Content Include="bootstrap\css\matrix-media.css" />
+    <Content Include="bootstrap\css\matrix-style.css" />
+    <Content Include="bootstrap\css\select2.css" />
+    <Content Include="bootstrap\css\uniform.css" />
+    <Content Include="bootstrap\font-awesome\css\font-awesome.css" />
+    <Content Include="bootstrap\images\backgrounds\calActiveBg.html" />
+    <Content Include="bootstrap\images\gallery\imgbox3.html" />
+    <Content Include="bootstrap\img\alpha.html" />
+    <Content Include="bootstrap\img\breadcrumb.png" />
+    <Content Include="bootstrap\img\demo\av1.jpg" />
+    <Content Include="bootstrap\img\demo\av2.jpg" />
+    <Content Include="bootstrap\img\demo\av3.jpg" />
+    <Content Include="bootstrap\img\demo\av4.jpg" />
+    <Content Include="bootstrap\img\demo\av5.jpg" />
+    <Content Include="bootstrap\img\demo\demo-image1.jpg" />
+    <Content Include="bootstrap\img\demo\demo-image2.jpg" />
+    <Content Include="bootstrap\img\demo\demo-image3.jpg" />
+    <Content Include="bootstrap\img\demo\envelope.png" />
+    <Content Include="bootstrap\img\gallery\imgbox1.jpg" />
+    <Content Include="bootstrap\img\gallery\imgbox2.jpg" />
+    <Content Include="bootstrap\img\gallery\imgbox3.jpg" />
+    <Content Include="bootstrap\img\gallery\imgbox4.jpg" />
+    <Content Include="bootstrap\img\gallery\imgbox5.jpg" />
+    <Content Include="bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap\img\glyphicons-halflings.html" />
+    <Content Include="bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap\img\gritter.png" />
+    <Content Include="bootstrap\img\hue.png" />
+    <Content Include="bootstrap\img\larrow.png" />
+    <Content Include="bootstrap\img\line.png" />
+    <Content Include="bootstrap\img\logo.png" />
+    <Content Include="bootstrap\img\menu-active.png" />
+    <Content Include="bootstrap\img\rarrow.png" />
+    <Content Include="bootstrap\img\saturation.png" />
+    <Content Include="bootstrap\img\select2.png" />
+    <Content Include="bootstrap\img\spinner.gif" />
+    <Content Include="bootstrap\img\sprite.png" />
+    <Content Include="bootstrap\js\bootstrap-colorpicker.js" />
+    <Content Include="bootstrap\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrap\js\bootstrap-wysihtml5.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\excanvas.min.js" />
+    <Content Include="bootstrap\js\fullcalendar.min.js" />
+    <Content Include="bootstrap\js\jquery.dataTables.min.js" />
+    <Content Include="bootstrap\js\jquery.flot.min.js" />
+    <Content Include="bootstrap\js\jquery.flot.pie.min.js" />
+    <Content Include="bootstrap\js\jquery.flot.resize.min.js" />
+    <Content Include="bootstrap\js\jquery.gritter.min.js" />
+    <Content Include="bootstrap\js\jquery.min.js" />
+    <Content Include="bootstrap\js\jquery.peity.min.js" />
+    <Content Include="bootstrap\js\jquery.toggle.buttons.html" />
+    <Content Include="bootstrap\js\jquery.ui.custom.js" />
+    <Content Include="bootstrap\js\jquery.uniform.js" />
+    <Content Include="bootstrap\js\jquery.validate.js" />
+    <Content Include="bootstrap\js\jquery.wizard.js" />
+    <Content Include="bootstrap\js\maruti.html" />
+    <Content Include="bootstrap\js\masked.js" />
+    <Content Include="bootstrap\js\matrix.calendar.js" />
+    <Content Include="bootstrap\js\matrix.charts.js" />
+    <Content Include="bootstrap\js\matrix.chat.js" />
+    <Content Include="bootstrap\js\matrix.dashboard.js" />
+    <Content Include="bootstrap\js\matrix.form_common.js" />
+    <Content Include="bootstrap\js\matrix.form_validation.js" />
+    <Content Include="bootstrap\js\matrix.interface.js" />
+    <Content Include="bootstrap\js\matrix.js" />
+    <Content Include="bootstrap\js\matrix.login.js" />
+    <Content Include="bootstrap\js\matrix.popover.js" />
+    <Content Include="bootstrap\js\matrix.tables.js" />
+    <Content Include="bootstrap\js\matrix.wizard.js" />
+    <Content Include="bootstrap\js\select2.min.js" />
+    <Content Include="bootstrap\js\wysihtml5-0.3.0.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
     <Content Include="Views\Authority\Index.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -129,8 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +226,28 @@
       <Project>{5a5c83a3-2f95-4017-9cb1-709bafb1976b}</Project>
       <Name>Shop.Authority</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\font-awesome\css\Descr.WD3" />
+    <Content Include="bootstrap\font-awesome\font\Descr.WD3" />
+    <Content Include="bootstrap\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="bootstrap\font-awesome\font\fontawesome-webfont.eot%40" />
+    <Content Include="bootstrap\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="bootstrap\font-awesome\font\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\images\backgrounds\blank2" />
+    <Content Include="bootstrap\images\backgrounds\Descr.WD3" />
+    <Content Include="bootstrap\images\backgrounds\skype_3Asuniljoshi19%40call" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\img\demo\Descr.WD3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\img\gallery\Descr.WD3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\img\Descr.WD3" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
