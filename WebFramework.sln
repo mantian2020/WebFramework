@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{CEB91BD5-8DB
 	ProjectSection(SolutionItems) = preProject
 		Lib\ICSharpCode.SharpZipLib.dll = Lib\ICSharpCode.SharpZipLib.dll
 		Lib\log4net.dll = Lib\log4net.dll
+		Lib\Martix Admin.rar = Lib\Martix Admin.rar
 		Lib\Memcached.ClientLibrary.dll = Lib\Memcached.ClientLibrary.dll
 		C:\Users\heqinggang\Documents\My Knowledge\Data\1665767273@qq.com\My Notes\ASP.NET\Memcache框架_Attachments\memcached_jb51.rar = C:\Users\heqinggang\Documents\My Knowledge\Data\1665767273@qq.com\My Notes\ASP.NET\Memcache框架_Attachments\memcached_jb51.rar
 		Lib\Newtonsoft.Json.dll = Lib\Newtonsoft.Json.dll
