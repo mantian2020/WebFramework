@@ -1,0 +1,15 @@
+﻿@using Shop.Template.Model
+@{
+    Layout = null;
+}
+<ul>
+    @foreach (MenuEntity item in Model)
+    {
+        <li class="">
+            <a href="@item.Url">
+                <i class="icon icon-home"></i>
+                <span>@item.Name</span>
+            </a>
+        </li>
+    }
+</ul>

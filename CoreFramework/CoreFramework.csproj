@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BasePageController.cs" />
     <Compile Include="Enum\ProjectName.cs" />
     <Compile Include="ShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
