@@ -9,5 +9,6 @@ namespace CoreFramework.Enum
     public struct ProjectName
     {
         public static string Authority = "Authority";
+        public static string Template = "Template";
     }
 }

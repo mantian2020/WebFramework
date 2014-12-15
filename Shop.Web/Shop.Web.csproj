@@ -226,6 +226,10 @@
       <Project>{5a5c83a3-2f95-4017-9cb1-709bafb1976b}</Project>
       <Name>Shop.Authority</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shop.Template\Shop.Template.csproj">
+      <Project>{073589b8-1eed-42ff-ab5b-cb11a99ffc08}</Project>
+      <Name>Shop.Template</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap\font-awesome\css\Descr.WD3" />
@@ -248,6 +252,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap\img\Descr.WD3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutMasterPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

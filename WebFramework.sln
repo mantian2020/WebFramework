@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moudles", "Moudles", "{7DDD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Authority", "Shop.Authority\Shop.Authority.csproj", "{5A5C83A3-2F95-4017-9CB1-709BAFB1976B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Template", "Shop.Template\Shop.Template.csproj", "{073589B8-1EED-42FF-AB5B-CB11A99FFC08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,11 +72,16 @@ Global
 		{5A5C83A3-2F95-4017-9CB1-709BAFB1976B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A5C83A3-2F95-4017-9CB1-709BAFB1976B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A5C83A3-2F95-4017-9CB1-709BAFB1976B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073589B8-1EED-42FF-AB5B-CB11A99FFC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073589B8-1EED-42FF-AB5B-CB11A99FFC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073589B8-1EED-42FF-AB5B-CB11A99FFC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073589B8-1EED-42FF-AB5B-CB11A99FFC08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5A5C83A3-2F95-4017-9CB1-709BAFB1976B} = {7DDD901F-4737-4143-A4F2-4071DC66EA69}
+		{073589B8-1EED-42FF-AB5B-CB11A99FFC08} = {7DDD901F-4737-4143-A4F2-4071DC66EA69}
 	EndGlobalSection
 EndGlobal
