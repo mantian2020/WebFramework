@@ -11,6 +11,16 @@ namespace CommonHelper
     public class Config
     {
         /// <summary>
+        /// 根据key，获取链接字段串
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string GetConnectionString(string key)
+        {
+            return ConfigurationManager.ConnectionStrings[key].ConnectionString;
+        }
+
+        /// <summary>
         /// 根据key，获取AppSettings的值
         /// </summary>
         /// <param name="key">key值</param>

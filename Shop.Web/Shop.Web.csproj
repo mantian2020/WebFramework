@@ -226,6 +226,10 @@
       <Project>{5a5c83a3-2f95-4017-9cb1-709bafb1976b}</Project>
       <Name>Shop.Authority</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shop.Module\Shop.Module.csproj">
+      <Project>{9bf98541-da9d-4578-8477-87ee03a0c3f5}</Project>
+      <Name>Shop.Module</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shop.Template\Shop.Template.csproj">
       <Project>{073589b8-1eed-42ff-ab5b-cb11a99ffc08}</Project>
       <Name>Shop.Template</Name>

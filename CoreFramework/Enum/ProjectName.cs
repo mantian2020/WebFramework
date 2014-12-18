@@ -10,5 +10,6 @@ namespace CoreFramework.Enum
     {
         public static string Authority = "Authority";
         public static string Template = "Template";
+        public static string Module = "Module";
     }
 }
