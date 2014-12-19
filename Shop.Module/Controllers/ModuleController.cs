@@ -9,6 +9,9 @@ namespace Shop.Module.Controllers
 {
     public class ModuleController : Controller
     {
-
+        public ActionResult ModuleManage()
+        {
+            return View();
+        }
     }
 }

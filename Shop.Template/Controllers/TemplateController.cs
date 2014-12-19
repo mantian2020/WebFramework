@@ -23,7 +23,7 @@ namespace Shop.Template.Controllers
         public PartialViewResult LeftMenu()
         {
             List<MenuEntity> lstMenu = new List<MenuEntity>();
-            lstMenu.Add(new MenuEntity() { Name = "权限管理", Url = "template/index" });
+            lstMenu.Add(new MenuEntity() { Name = "模块管理", Url = "/Module/Module/ModuleManage" });
             lstMenu.Add(new MenuEntity() { Name = "应用信息", Url = "template/index" });
             return PartialView(lstMenu);
         }

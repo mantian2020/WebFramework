@@ -18,7 +18,7 @@ namespace Shop.Template
         public override void RegisterArea(AreaRegistrationContext context)
         {
             string[] controllerNamespaces = new[] { "Shop." + ProjectName.Template + ".Controllers" };
-            context.MapRoute("Default"
+            context.MapRoute("TemplateDefault"
                 , ProjectName.Template + "/{controller}/{action}"
                 , new { controller = "Template", action = "Login" }
                 , null, controllerNamespaces);

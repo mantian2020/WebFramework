@@ -19,7 +19,7 @@ namespace Shop.Module
         public override void RegisterArea(AreaRegistrationContext context)
         {
             string[] controllerNamespaces = new[] { "Shop." + ProjectName.Module + ".Controllers" };
-            context.MapRoute("Default"
+            context.MapRoute("ModuleDefault"
                 , ProjectName.Module + "/{controller}/{action}"
                 , new { controller = "Module", action = "Index" }
                 , null, controllerNamespaces);
