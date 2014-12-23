@@ -17,6 +17,12 @@ namespace Shop.Template.Controllers
 {
     public class TemplateController : CommonController
     {
+        private readonly IShop_UserInfo_Services _shop_userinfo_services;
+        public TemplateController(IShop_UserInfo_Services shop_userinfo_services)
+        {
+            _shop_userinfo_services = shop_userinfo_services;
+        }
+
         public ActionResult Login()
         {
             if (LoginServices.CheckLogin())
@@ -34,8 +40,7 @@ namespace Shop.Template.Controllers
         public string CheckLogin(string userName, string password)
         {
             ResultInfo<string> result = new ResultInfo<string>();
-            IShop_UserInfo_Services services = new Shop_UserInfo_Services();
-            Shop_UserInfo userInfo = services.GetUserInfo(userName, password);
+            Shop_UserInfo userInfo = _shop_userinfo_services.GetUserInfo(userName, password);
             if (userInfo != null)
             {
                 LoginServices.Login(userInfo.Shop_UserName, null);

@@ -9,12 +9,17 @@ using Shop.Template.Services.IServices;
 
 namespace Shop.Template.Services
 {
-    class Shop_UserInfo_Services : IShop_UserInfo_Services
+    public class Shop_UserInfo_Services : IShop_UserInfo_Services
     {
+        private readonly IShop_UserInfo_DAL _shop_userInfo_dal;
+        public Shop_UserInfo_Services(IShop_UserInfo_DAL shop_userInfo_dal)
+        {
+            _shop_userInfo_dal = shop_userInfo_dal;
+        }
+
         public Model.Shop_UserInfo GetUserInfo(string userName, string password)
         {
-           IShop_UserInfo_DAL dal = new Shop_UserInfo_DAL();
-            return dal.GetUserInfo(userName, password);
+           return _shop_userInfo_dal.GetUserInfo(userName, password);
         }
     }
 }
