@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CoreFramework.Infrastructure.Interfaces;
 using Shop.Module.Model;
 
-namespace Shop.Module.DAL.Interface
+namespace Shop.Module.DAL.IDAL
 {
     public interface IShop_Modules_DAL:IDependency
     {

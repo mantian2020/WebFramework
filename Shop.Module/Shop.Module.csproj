@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ModuleController.cs" />
-    <Compile Include="DAL\Interface\IShop_Modules_DAL.cs" />
+    <Compile Include="DAL\IDAL\IShop_Modules_DAL.cs" />
     <Compile Include="DAL\Shop_Modules_DAL.cs" />
     <Compile Include="Model\Shop_Modules.cs" />
     <Compile Include="ModuleAreaRegistration.cs" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using CommonHelper;
 using CoreFramework.DBHelper;
 using MySql.Data.MySqlClient;
-using Shop.Module.DAL.Interface;
+using Shop.Module.DAL.IDAL;
 
 namespace Shop.Module.DAL
 {
