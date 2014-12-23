@@ -69,8 +69,10 @@
     <Compile Include="DBHelper\MySqlDataHelper.cs" />
     <Compile Include="DBHelper\SqlDataHelper.cs" />
     <Compile Include="Enum\ProjectName.cs" />
+    <Compile Include="Extends\HttpContextExtend.cs" />
     <Compile Include="Infrastructure\Interfaces\IDependency.cs" />
     <Compile Include="Infrastructure\Ioc\AutofacManager.cs" />
+    <Compile Include="Modules\UrlModule.cs" />
     <Compile Include="Services\LoginServices.cs" />
     <Compile Include="ShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +94,7 @@
       <Name>SSOFramework</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

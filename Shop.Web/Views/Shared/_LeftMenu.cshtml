@@ -1,4 +1,5 @@
-﻿@using CoreFramework.Services
+﻿@using CoreFramework.Extends
+@using CoreFramework.Services
 @{
     Layout = null;
     var menus = LoginServices.GetUserMenus();
@@ -8,7 +9,7 @@
     { 
         foreach (var item in menus)
         {
-            <li class="@string.Format("{0}",item.HaveSecondMenus ? "submenu" : string.Empty)">
+            <li class="@string.Format("{0}{1}", item.HaveSecondMenus ? "submenu" : string.Empty, HttpContextExtend.IsCurrentUrl(item.MenuUrls) ? " active" : string.Empty)">
                 <a href="@string.Format("{0}",string.IsNullOrEmpty(item.Url) ? "#" : item.Url)">
                     <i class="icon icon-home"></i>
                     <span>@item.Name</span>
@@ -21,9 +22,9 @@
                 {
                     <ul>
                         @foreach (var secondMenu in item.SecondMenus)
-{
-    <li><a href="@secondMenu.Url">@secondMenu.Name</a></li>
-}
+                        {
+                            <li><a href="@secondMenu.Url">@secondMenu.Name</a></li>
+                        }
                     </ul>
                 }
             </li>

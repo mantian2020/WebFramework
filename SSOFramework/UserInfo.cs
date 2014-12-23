@@ -29,5 +29,9 @@ namespace SSOFramework
         /// 是否有二级菜单
         /// </summary>
         public bool HaveSecondMenus { set; get; }
+        /// <summary>
+        /// 当前菜单所有的url
+        /// </summary>
+        public List<string> MenuUrls { set; get; }
     }
 }

@@ -35,6 +35,25 @@ namespace Shop.Template.Controllers
             }
             return View();
         }
+
+        /// <summary>
+        /// 首页
+        /// </summary>
+        /// <returns></returns>
+        [LoginFilter(Message = "Template_Index")]
+        public ActionResult Index()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 菜单管理页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult MenuManage()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 异步用户登陆
         /// </summary>
@@ -58,11 +77,18 @@ namespace Shop.Template.Controllers
                     menu.Name = item.Shop_MenuName;
                     menu.Url = item.Shop_MenuUrl;
                     menu.SecondMenus = new List<Menu>();
+                    menu.MenuUrls = new List<string>();
+                    menu.MenuUrls.Add(menu.Url);
                     //获取二级菜单
                     var temp = lstMenus.Where(o => o.Shop_ParentId == item.Shop_MenuId).ToList();
                     if (temp.Count > 0)
                     {
-                        temp.ForEach(o => menu.SecondMenus.Add(new Menu() { Name = o.Shop_MenuName, Url = o.Shop_MenuUrl }));
+                        temp.ForEach(
+                            o =>
+                            {
+                                menu.SecondMenus.Add(new Menu() {Name = o.Shop_MenuName, Url = o.Shop_MenuUrl});
+                                menu.MenuUrls.Add(o.Shop_MenuUrl);
+                            });
                         menu.HaveSecondMenus = true;
                     }
                     else
@@ -81,11 +107,6 @@ namespace Shop.Template.Controllers
             return SerializeHelper.SerializeData<ResultInfo<string>>(result);
         }
 
-        [LoginFilter(Message = "Template_Index")]
-        public ActionResult Index()
-        {
-            return View();
-        }
         /// <summary>
         /// 退出系统
         /// </summary>
