@@ -37,5 +37,15 @@ namespace CoreFramework.Services
             UserCookiesService sso = new UserCookiesService();
             sso.SignOut();
         }
+        /// <summary>
+        /// 获取用户菜单列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<Menu> GetUserMenus()
+        {
+            UserCookiesService sso = new UserCookiesService();
+            CommonHelper.Entity.ResultInfo<SSOFramework.UserInfo> result = sso.CheckLogin();
+            return result.Data.Menus;
+        }
     }
 }

@@ -12,15 +12,19 @@ using CoreFramework.Services;
 using Shop.Template.Model;
 using Shop.Template.Services;
 using Shop.Template.Services.IServices;
+using SSOFramework;
 
 namespace Shop.Template.Controllers
 {
     public class TemplateController : CommonController
     {
         private readonly IShop_UserInfo_Services _shop_userinfo_services;
-        public TemplateController(IShop_UserInfo_Services shop_userinfo_services)
+        private readonly IShop_Menu_Services _shop_menu_services;
+        public TemplateController(IShop_UserInfo_Services shop_userinfo_services
+                                ,IShop_Menu_Services shop_menu_services)
         {
             _shop_userinfo_services = shop_userinfo_services;
+            _shop_menu_services = shop_menu_services;
         }
 
         public ActionResult Login()
@@ -41,9 +45,36 @@ namespace Shop.Template.Controllers
         {
             ResultInfo<string> result = new ResultInfo<string>();
             Shop_UserInfo userInfo = _shop_userinfo_services.GetUserInfo(userName, password);
+            List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
+            //获取一级菜单
+            List<Shop_Menu> lstFirstMenus = lstMenus.Where(o => o.Shop_ParentId == 0).ToList();
+            //封装用户菜单
+            List<Menu> lstUserMenus = new List<Menu>();
+            if (lstFirstMenus != null && lstFirstMenus.Count > 0)
+            {
+                foreach (Shop_Menu item in lstFirstMenus)
+                {
+                    Menu menu = new Menu();
+                    menu.Name = item.Shop_MenuName;
+                    menu.Url = item.Shop_MenuUrl;
+                    menu.SecondMenus = new List<Menu>();
+                    //获取二级菜单
+                    var temp = lstMenus.Where(o => o.Shop_ParentId == item.Shop_MenuId).ToList();
+                    if (temp.Count > 0)
+                    {
+                        temp.ForEach(o => menu.SecondMenus.Add(new Menu() { Name = o.Shop_MenuName, Url = o.Shop_MenuUrl }));
+                        menu.HaveSecondMenus = true;
+                    }
+                    else
+                    {
+                        menu.HaveSecondMenus = false;
+                    }
+                    lstUserMenus.Add(menu);
+                }
+            }
             if (userInfo != null)
             {
-                LoginServices.Login(userInfo.Shop_UserName, null);
+                LoginServices.Login(userInfo.Shop_UserName, lstUserMenus);
                 result.Success = true;
                 result.Msg = "登录成功";
             }

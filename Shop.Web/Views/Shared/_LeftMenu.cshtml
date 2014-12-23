@@ -1,15 +1,32 @@
-﻿@using Shop.Template.Model
+﻿@using CoreFramework.Services
 @{
     Layout = null;
+    var menus = LoginServices.GetUserMenus();
 }
 <ul>
-    @foreach (MenuEntity item in Model)
-    {
-        <li class="">
-            <a href="@item.Url">
-                <i class="icon icon-home"></i>
-                <span>@item.Name</span>
-            </a>
-        </li>
+    @if (menus != null)
+    { 
+        foreach (var item in menus)
+        {
+            <li class="@string.Format("{0}",item.HaveSecondMenus ? "submenu" : string.Empty)">
+                <a href="@string.Format("{0}",string.IsNullOrEmpty(item.Url) ? "#" : item.Url)">
+                    <i class="icon icon-home"></i>
+                    <span>@item.Name</span>
+                    @if (item.HaveSecondMenus)
+                    {
+                        <span class="label label-important">@item.SecondMenus.Count</span>
+                    }
+                </a>
+                @if (item.HaveSecondMenus)
+                {
+                    <ul>
+                        @foreach (var secondMenu in item.SecondMenus)
+{
+    <li><a href="@secondMenu.Url">@secondMenu.Name</a></li>
+}
+                    </ul>
+                }
+            </li>
+        }
     }
 </ul>

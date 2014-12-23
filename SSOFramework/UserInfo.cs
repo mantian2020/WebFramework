@@ -21,5 +21,13 @@ namespace SSOFramework
     {
         public string Url { set; get; }
         public string Name { set; get; }
+        /// <summary>
+        /// 二级菜单
+        /// </summary>
+        public List<Menu> SecondMenus { set; get; }
+        /// <summary>
+        /// 是否有二级菜单
+        /// </summary>
+        public bool HaveSecondMenus { set; get; }
     }
 }

@@ -46,11 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="DAL\IDAL\IShop_Menu_DAL.cs" />
     <Compile Include="DAL\IDAL\IShop_UserInfo_DAL.cs" />
+    <Compile Include="DAL\Shop_Menu_DAL.cs" />
     <Compile Include="DAL\Shop_UserInfo_DAL.cs" />
-    <Compile Include="Model\MenuEntity.cs" />
+    <Compile Include="Model\Shop_Menu.cs" />
     <Compile Include="Model\Shop_UserInfo.cs" />
+    <Compile Include="Services\IServices\IShop_Menu_Services.cs" />
     <Compile Include="Services\IServices\IShop_UserInfo_Services.cs" />
+    <Compile Include="Services\Shop_Menu_Services.cs" />
     <Compile Include="Services\Shop_UserInfo_Services.cs" />
     <Compile Include="TemplateAreaRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
