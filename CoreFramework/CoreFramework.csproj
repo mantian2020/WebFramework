@@ -37,6 +37,9 @@
       <Private>True</Private>
       <HintPath>..\packages\MySql.Data.6.9.5\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="RouteDebug">
+      <HintPath>..\Lib\RouteDebug.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -45,6 +48,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,13 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\BasePageController.cs" />
+    <Compile Include="ActionFilters\LoginFilterAttribute.cs" />
+    <Compile Include="Controllers\AuthenticateController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="DBHelper\IDataHelper.cs" />
     <Compile Include="DBHelper\MySqlDataHelper.cs" />
     <Compile Include="DBHelper\SqlDataHelper.cs" />
     <Compile Include="Enum\ProjectName.cs" />
     <Compile Include="Infrastructure\Interfaces\IDependency.cs" />
     <Compile Include="Infrastructure\Ioc\AutofacManager.cs" />
+    <Compile Include="Services\LoginServices.cs" />
     <Compile Include="ShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,6 +75,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBHelper\使用说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{ba8b13e7-a802-4d35-88b9-e02fae08993a}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSOFramework\SSOFramework.csproj">
+      <Project>{2fc91c28-735e-452b-acfe-3bf56e03444a}</Project>
+      <Name>SSOFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

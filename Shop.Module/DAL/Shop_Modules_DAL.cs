@@ -47,7 +47,7 @@ namespace Shop.Module.DAL
             parameters[1].Value = model.Shop_Modules_Description;
             parameters[2].Value = model.Shop_Modules_IsStart;
             parameters[3].Value = model.Shop_Modules_IsValid;
-            object result = dataHelper.ExecuteScalar(Config.GetConnectionString("MySQLShop"), CommandType.Text, string.Empty, parameters);
+            object result = dataHelper.ExecuteScalar(Config.ShopConnectionString, CommandType.Text, string.Empty, parameters);
             return result != null ? Convert.ToInt32(result) : 0;
         }
 

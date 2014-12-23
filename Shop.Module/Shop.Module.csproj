@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\Interface\" />
-    <Folder Include="Servives\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">

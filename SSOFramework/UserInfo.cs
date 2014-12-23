@@ -13,5 +13,13 @@ namespace SSOFramework
     {
         public string UserName { set; get; }
         public string Code { set; get; }
+
+        public List<Menu> Menus { set; get; }
+    }
+
+    public class Menu
+    {
+        public string Url { set; get; }
+        public string Name { set; get; }
     }
 }

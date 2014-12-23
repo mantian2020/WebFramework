@@ -21,7 +21,7 @@ namespace Shop.Module
             string[] controllerNamespaces = new[] { "Shop." + ProjectName.Module + ".Controllers" };
             context.MapRoute("ModuleDefault"
                 , ProjectName.Module + "/{controller}/{action}"
-                , new { controller = "Module", action = "Index" }
+                , new { controller = "Module", action = "ModuleManage" }
                 , null, controllerNamespaces);
         }
         

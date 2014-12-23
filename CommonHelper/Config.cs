@@ -19,6 +19,12 @@ namespace CommonHelper
         {
             return ConfigurationManager.ConnectionStrings[key].ConnectionString;
         }
+        /// <summary>
+        /// shop库连接字符串
+        /// </summary>
+        public static string ShopConnectionString {
+            get { return ConfigurationManager.ConnectionStrings["MySQLShop"].ConnectionString; }
+        }
 
         /// <summary>
         /// 根据key，获取AppSettings的值

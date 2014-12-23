@@ -46,6 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DAL\" />
+    <Folder Include="Model\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

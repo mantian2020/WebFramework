@@ -12,15 +12,19 @@ namespace Shop.Template
     {
         public override string AreaName
         {
-            get { return ProjectName.Authority; }
+            get { return ProjectName.Template; }
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            string[] controllerNamespaces = new[] { "Shop." + ProjectName.Template + ".Controllers" };
+            string[] controllerNamespaces = new string []{ "Shop." + ProjectName.Template + ".Controllers" };
             context.MapRoute("TemplateDefault"
                 , ProjectName.Template + "/{controller}/{action}"
                 , new { controller = "Template", action = "Login" }
+                , null, controllerNamespaces);
+            context.MapRoute("Template_Login"
+                , ProjectName.Template + "/{controller}/{action}/{userName}/{password}"
+                , new { controller = "Template", action = "CheckLogin", userName = UrlParameter.Optional, password = UrlParameter.Optional }
                 , null, controllerNamespaces);
         }
     }
