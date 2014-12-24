@@ -49,9 +49,12 @@ namespace Shop.Template.Controllers
         /// 菜单管理页
         /// </summary>
         /// <returns></returns>
+        [LoginFilter(Message = "Template_Index")]
         public ActionResult MenuManage()
         {
-            return View();
+            List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
+
+            return View(lstMenus);
         }
 
         /// <summary>
