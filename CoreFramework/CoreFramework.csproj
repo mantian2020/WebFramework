@@ -89,13 +89,17 @@
     <Compile Include="DBHelper\SqlDataHelper.cs" />
     <Compile Include="Enum\ProjectName.cs" />
     <Compile Include="Extends\HttpContextExtend.cs" />
-    <Compile Include="Infrastructure\Interfaces\IDependency.cs" />
+    <Compile Include="Infrastructure\Interfaces\IDependency.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Infrastructure\Ioc\AutofacManager.cs" />
     <Compile Include="ModelBinder\CommonModelBinder.cs" />
     <Compile Include="Modules\UrlModule.cs" />
     <Compile Include="Services\LoginServices.cs" />
-    <Compile Include="ShopApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopApplication.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
