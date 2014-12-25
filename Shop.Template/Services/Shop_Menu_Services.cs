@@ -42,7 +42,7 @@ namespace Shop.Template.Services
             {
                 resultInfo.Msg = "更新失败";
             }
-            return SerializeHelper.Serialize(resultInfo);
+            return SerializeHelper.SerializeData(resultInfo);
         }
     }
 }

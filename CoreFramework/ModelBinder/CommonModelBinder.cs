@@ -9,7 +9,6 @@ using CommonHelper;
 
 namespace CoreFramework.ModelBinder
 {
-    [ModelBinderType(typeof(string))]
     public class CommonModelBinder<T> : IModelBinder
     {
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)

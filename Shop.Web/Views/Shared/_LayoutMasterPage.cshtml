@@ -1,14 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Matrix Admin</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="/bootstrap/css/matrix-style.css" />
-    <link rel="stylesheet" href="/bootstrap/css/matrix-media.css" />
-    <link href="/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet" />s
+    @Styles.Render("~/bootstrap/css")
 </head>
 <body>
 
@@ -73,13 +70,10 @@
     <div class="row-fluid">
         <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a> </div>
     </div>
-
+    
     <!--end-Footer-part-->
-    <script src="/bootstrap/js/excanvas.min.js"></script> 
-    <script src="/bootstrap/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/jquery.ui.custom.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/bootstrap/js/matrix.js"></script>
-
+    @Scripts.Render("~/bootstrap/js/jquery")
+    @Scripts.Render("~/bootstrap/js")
+    @RenderSection("Script", false)
 </body>
 </html>
