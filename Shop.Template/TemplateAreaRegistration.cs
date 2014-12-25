@@ -18,13 +18,17 @@ namespace Shop.Template
         public override void RegisterArea(AreaRegistrationContext context)
         {
             string[] controllerNamespaces = new string []{ "Shop." + ProjectName.Template + ".Controllers" };
+            context.MapRoute("Template_Login"
+                , ProjectName.Template + "/Template/CheckLogin/{userName}/{password}"
+                , new { controller = "Template", action = "CheckLogin", userName = UrlParameter.Optional, password = UrlParameter.Optional }
+                , null, controllerNamespaces);
+            context.MapRoute("Template_EditMenu"
+                , ProjectName.Template + "/Template/EditMenu/{shop_menuId}"
+                , new { controller = "Template", action = "EditMenu", shop_menuId = UrlParameter.Optional}
+                , null, controllerNamespaces);
             context.MapRoute("TemplateDefault"
                 , ProjectName.Template + "/{controller}/{action}"
                 , new { controller = "Template", action = "Login" }
-                , null, controllerNamespaces);
-            context.MapRoute("Template_Login"
-                , ProjectName.Template + "/{controller}/{action}/{userName}/{password}"
-                , new { controller = "Template", action = "CheckLogin", userName = UrlParameter.Optional, password = UrlParameter.Optional }
                 , null, controllerNamespaces);
         }
     }

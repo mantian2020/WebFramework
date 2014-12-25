@@ -8,6 +8,7 @@ using CommonHelper;
 using CommonHelper.Entity;
 using CoreFramework.ActionFilters;
 using CoreFramework.Controllers;
+using CoreFramework.ModelBinder;
 using CoreFramework.Services;
 using Shop.Template.Model;
 using Shop.Template.Services;
@@ -49,12 +50,33 @@ namespace Shop.Template.Controllers
         /// 菜单管理页
         /// </summary>
         /// <returns></returns>
-        [LoginFilter(Message = "Template_Index")]
+        [LoginFilter(Message = "Template_MenuManage")]
         public ActionResult MenuManage()
         {
             List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
 
             return View(lstMenus);
+        }
+        /// <summary>
+        /// 编辑菜单
+        /// </summary>
+        /// <param name="shop_menuId"></param>
+        /// <returns></returns>
+        [LoginFilter(Message = "Template_EditMenu")]
+        public ActionResult EditMenu(int shop_menuId)
+        {
+            Shop_Menu menu = _shop_menu_services.GetShopMenu(shop_menuId);
+            return View(menu);
+        }
+
+        /// <summary>
+        /// 保存菜单
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdateMenu([ModelBinder(typeof(CommonModelBinder<Shop_Menu>))]Shop_Menu menu)
+        {
+            string result = _shop_menu_services.UpdateMenu(menu);
+            return Content(result);
         }
 
         /// <summary>

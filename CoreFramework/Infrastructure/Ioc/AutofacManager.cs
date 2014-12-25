@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -19,6 +20,8 @@ namespace CoreFramework.Infrastructure.Ioc
             var assemblys = AppDomain.CurrentDomain.GetAssemblies().ToList();
             //注册所有的controller
             builder.RegisterControllers(assemblys.ToArray());
+            builder.RegisterModelBinders(Assembly.GetExecutingAssembly());
+            builder.RegisterModelBinderProvider();  
 
             //注册所有的程序集
             builder.RegisterAssemblyTypes(assemblys.ToArray())

@@ -1,0 +1,82 @@
+﻿@model Shop.Template.Model.Shop_Menu
+@{
+    Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
+}
+@section Crumb
+{
+    <a href="/template/template/MenuManage" class="tip-bottom">
+        <i class="icon-home"></i> 菜单管理
+    </a>
+    <a href="#" class="current">菜单编辑</a>
+}
+<div class="span11">
+    <div class="widget-box">
+        <div class="widget-title">
+            <span class="icon"> <i class="icon-align-justify"></i> </span>
+            <h5>菜单编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+            <form action="#" method="get" class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">菜单ID:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuId" id="Shop_MenuId">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单名:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuName" id="Shop_MenuName">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单地址:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuUrl" id="Shop_MenuUrl">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">权限ID:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_RoleId" id="Shop_RoleId">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">父节点ID:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_ParentId" id="Shop_ParentId">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success" onclick="MenuHelper.UpdateMenu();">保存</button>
+                    <a class="btn btn-success" href="/template/template/MenuManage">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var MenuHelper = {
+        //更新菜单
+        UpdateMenu:function() {
+            var para = {
+                Shop_MenuId: $("#Shop_MenuId").val(),
+                Shop_MenuName: $("#Shop_MenuName").val(),
+                Shop_MenuUrl: $("#Shop_MenuUrl").val(),
+                Shop_RoleId: $("#Shop_RoleId").val(),
+                Shop_ParentId: $("#Shop_ParentId").val()
+            };
+            $.ajax({
+                type: "POST",
+                url: "/template/template/UpdateMenu",
+                data: { menu: para },
+                success: function (data) {
+                    var json = eval("(" + data + ")");
+                    if (json.Success) {
+                        window.location.href = "/template/template/index";
+                    }
+                }
+            });
+        }
+    };
+</script>

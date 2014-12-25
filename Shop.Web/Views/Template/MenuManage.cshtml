@@ -8,6 +8,7 @@
     <a href="/template/template/MenuManage" class="tip-bottom">
         <i class="icon-home"></i> 菜单管理
     </a>
+    <a href="#" class="current">菜单列表</a>
 }
 <table class="table table-bordered table-striped">
     <thead>
@@ -17,6 +18,7 @@
             <th>菜单地址</th>
             <th>权限ID</th>
             <th>父节点ID</th>
+            <th>操作</th>
         </tr>
     </thead>
     <tbody>
@@ -28,8 +30,11 @@
                 <td>@item.Shop_MenuUrl</td>
                 <td>@item.Shop_RoleId</td>
                 <td>@item.Shop_ParentId</td>
+                <td>
+                    <a class="btn btn-primary btn-mini" href="/template/template/EditMenu/@item.Shop_MenuId">编辑</a>
+                    <a class="btn btn-primary btn-mini">删除</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
-
