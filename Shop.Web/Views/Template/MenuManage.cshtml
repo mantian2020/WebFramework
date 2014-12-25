@@ -4,6 +4,14 @@
     Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
 }
 
+@section Style{
+    <style type="text/css">
+        .row {
+            margin-top: 5px;
+        }
+    </style>
+}
+
 @section Crumb
 {
     <a href="/template/template/MenuManage" class="tip-bottom">
@@ -11,74 +19,86 @@
     </a>
     <a href="#" class="current">菜单列表</a>
 }
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>菜单ID</th>
-            <th>菜单名</th>
-            <th>菜单地址</th>
-            <th>权限ID</th>
-            <th>父节点ID</th>
-            <th>操作</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Items)
-        {
-            <tr class="@string.Format("{0}", item.Shop_MenuId % 2 == 0 ? "odd gradeX" : "even gradeC")">
-                <td>@item.Shop_MenuId</td>
-                <td>@item.Shop_MenuName</td>
-                <td>@item.Shop_MenuUrl</td>
-                <td>@item.Shop_RoleId</td>
-                <td>@item.Shop_ParentId</td>
-                <td>
-                    <a class="btn btn-primary btn-mini" href="/template/template/EditMenu/@item.Shop_MenuId">编辑</a>
-                    <a class="btn btn-primary btn-mini">删除</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<div id="pagination"></div>  
-@section Script
-{
-    @Scripts.Render("~/bootstrap/js/paginator")
-    <script type="text/javascript">
-        var options = {
-            currentPage: @Model.PageIndex,
-            totalPages: @Model.TotalPageCount,
-            alignment: "right",
-            size: "normal",
-            itemContainerClass: function (type, page, current) {
-                return (page === current) ? "active" : "pointer-cursor";
-            },
-            itemTexts: function (type, page, current) {
-                switch (type) {
-                    case "first":
-                        return "首页";
-                    case "prev":
-                        return "前一页";
-                    case "next":
-                        return "下一页";
-                    case "last":
-                        return "末页";
-                    case "page":
-                        return page;
-                }
-                return page;
-            },
-            onPageClicked: function (e, originalEvent, type, page) {
-                /*
-                e.stopImmediatePropagation();
-                var currentTarget = $(e.currentTarget);
-                var pages = currentTarget.bootstrapPaginator("getPages");
-                currentTarget.bootstrapPaginator("show", page);*/
-            },
-            pageUrl: function (type, page, current) {
-                return "/template/template/MenuManage/" + page;//return "/card/flow?page=" + page   ; //分页的链接,传递的参数为page
-            }
-        };
+<div class="container">
+    <div class="row">
+        <div class="span11">
+            <button class="btn btn-primary" type="button">添加菜单</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>菜单ID</th>
+                        <th>菜单名</th>
+                        <th>菜单地址</th>
+                        <th>权限ID</th>
+                        <th>父节点ID</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr class="@string.Format("{0}", item.Shop_MenuId % 2 == 0 ? "odd gradeX" : "even gradeC")">
+                            <td>@item.Shop_MenuId</td>
+                            <td>@item.Shop_MenuName</td>
+                            <td>@item.Shop_MenuUrl</td>
+                            <td>@item.Shop_RoleId</td>
+                            <td>@item.Shop_ParentId</td>
+                            <td>
+                                <a class="btn btn-primary btn-mini" href="/template/template/EditMenu/@item.Shop_MenuId">编辑</a>
+                                <a class="btn btn-primary btn-mini">删除</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+    </div>
+</div>
 
-        $('#pagination').bootstrapPaginator(options);
-    </script>
-}
+    @section Script
+{
+        @Scripts.Render("~/bootstrap/js/paginator")
+        <script type="text/javascript">
+            var options = {
+                currentPage: @Model.PageIndex,
+                totalPages: @Model.TotalPageCount,
+                alignment: "right",
+                size: "normal",
+                itemContainerClass: function (type, page, current) {
+                    return (page === current) ? "active" : "pointer-cursor";
+                },
+                itemTexts: function (type, page, current) {
+                    switch (type) {
+                        case "first":
+                            return "首页";
+                        case "prev":
+                            return "前一页";
+                        case "next":
+                            return "下一页";
+                        case "last":
+                            return "末页";
+                        case "page":
+                            return page;
+                    }
+                    return page;
+                },
+                onPageClicked: function (e, originalEvent, type, page) {
+                    /*
+                    e.stopImmediatePropagation();
+                    var currentTarget = $(e.currentTarget);
+                    var pages = currentTarget.bootstrapPaginator("getPages");
+                    currentTarget.bootstrapPaginator("show", page);*/
+                },
+                pageUrl: function (type, page, current) {
+                    return "/template/template/MenuManage/" + page;//return "/card/flow?page=" + page   ; //分页的链接,传递的参数为page
+                }
+            };
+
+            $('#pagination').bootstrapPaginator(options);
+        </script>
+    }

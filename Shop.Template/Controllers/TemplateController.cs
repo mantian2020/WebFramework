@@ -60,7 +60,7 @@ namespace Shop.Template.Controllers
         {
             int currentIndex = 1;
             currentIndex = page ?? 1;
-            int pageSize = 1;
+            int pageSize = 2;
             List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
             List<Shop_Menu> tempMenus = lstMenus.Skip((currentIndex - 1) * pageSize).Take(pageSize).ToList();
 
