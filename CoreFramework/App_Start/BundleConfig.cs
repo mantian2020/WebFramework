@@ -17,12 +17,15 @@ namespace CoreFramework
                 , "~/bootstrap/css/matrix-style.css"
                 , "~/bootstrap/css/matrix-media.css"
                 , "~/bootstrap/font-awesome/css/font-awesome.css"));
-            bundles.Add(new ScriptBundle("~/bootstrap/js/jquery").Include("~/bootstrap/js/jquery.min.js"));
+            
             bundles.Add(new ScriptBundle("~/bootstrap/js")
                 .Include("~/bootstrap/js/excanvas.min.js"
                 , "~/bootstrap/js/jquery.ui.custom.js"
                 , "~/bootstrap/js/bootstrap.min.js"
                 , "~/bootstrap/js/matrix.js"));
+            bundles.Add(new ScriptBundle("~/bootstrap/js/jquery").Include("~/bootstrap/js/jquery.min.js"));
+            bundles.Add(new ScriptBundle("~/bootstrap/js/paginator").Include("~/bootstrap/js/bootstrap-paginator.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/Modules/Template/MenuHelper").Include("~/Scripts/Modules/Template/MenuHelper.js"));
 
 

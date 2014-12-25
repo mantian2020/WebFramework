@@ -21,6 +21,11 @@ namespace Shop.Template.Controllers
     {
         private readonly IShop_UserInfo_Services _shop_userinfo_services;
         private readonly IShop_Menu_Services _shop_menu_services;
+
+        public TemplateController()
+        {
+        }
+
         public TemplateController(IShop_UserInfo_Services shop_userinfo_services
                                 ,IShop_Menu_Services shop_menu_services)
         {
@@ -51,11 +56,21 @@ namespace Shop.Template.Controllers
         /// </summary>
         /// <returns></returns>
         [LoginFilter(Message = "Template_MenuManage")]
-        public ActionResult MenuManage()
+        public ActionResult MenuManage(int? page)
         {
+            int currentIndex = 1;
+            currentIndex = page ?? 1;
+            int pageSize = 1;
             List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
+            List<Shop_Menu> tempMenus = lstMenus.Skip((currentIndex - 1) * pageSize).Take(pageSize).ToList();
 
-            return View(lstMenus);
+            PageInfo<Shop_Menu> pageInfo = new PageInfo<Shop_Menu>();
+            pageInfo.PageIndex = currentIndex;
+            pageInfo.PageSize = pageSize;
+            pageInfo.TotalCount = lstMenus.Count;
+            pageInfo.Items = tempMenus;
+
+            return View(pageInfo);
         }
         /// <summary>
         /// 编辑菜单

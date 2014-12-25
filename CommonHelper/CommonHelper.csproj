@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Entity\PageInfo.cs" />
     <Compile Include="Entity\ResultInfo.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Log\ILogService.cs" />
