@@ -10,4 +10,3 @@ E:\工作项目\git\WebFramework\DAOFramework\obj\Debug\DAOFramework.csprojResol
 E:\工作项目\git\WebFramework\DAOFramework\obj\Debug\DAOFramework.dll
 E:\工作项目\git\WebFramework\DAOFramework\obj\Debug\DAOFramework.pdb
 E:\工作项目\git\WebFramework\DAOFramework\bin\Debug\DAOFramework.dll.config
-E:\工作项目\git\WebFramework\DAOFramework\bin\Debug\MySql.Data.dll
