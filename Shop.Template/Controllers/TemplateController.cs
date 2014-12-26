@@ -83,7 +83,15 @@ namespace Shop.Template.Controllers
             Shop_Menu menu = _shop_menu_services.GetShopMenu(shop_menuId);
             return View(menu);
         }
-
+        /// <summary>
+        /// 删除菜单
+        /// </summary>
+        /// <param name="shop_menuId"></param>
+        /// <returns></returns>
+        public string DeleteMenu(int shop_menuId)
+        {
+            return _shop_menu_services.DeleteMenu(shop_menuId);
+        }
         /// <summary>
         /// 添加菜单
         /// </summary>

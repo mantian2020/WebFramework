@@ -26,6 +26,10 @@ namespace Shop.Template
                 , ProjectName.Template + "/Template/EditMenu/{shop_menuId}"
                 , new { controller = "Template", action = "EditMenu", shop_menuId = UrlParameter.Optional}
                 , null, controllerNamespaces);
+            context.MapRoute("Template_DeleteMenu"
+                , ProjectName.Template + "/Template/DeleteMenu/{shop_menuId}"
+                , new { controller = "Template", action = "DeleteMenu", shop_menuId = UrlParameter.Optional }
+                , null, controllerNamespaces);
             context.MapRoute("Template_MenuManage"
                 , ProjectName.Template + "/Template/MenuManage/{page}"
                 , new { controller = "Template", action = "MenuManage", page = UrlParameter.Optional }

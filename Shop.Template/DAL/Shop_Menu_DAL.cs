@@ -143,5 +143,20 @@ namespace Shop.Template.DAL
             
             return result !=null ?  Convert.ToInt32(result) : 0;
         }
+
+
+        public bool DeleteMenu(int shop_MenuId)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("DELETE FROM `shop_menu`  ");
+            strSql.Append("WHERE Shop_MenuId=@Shop_MenuId");
+            MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@Shop_MenuId",MySqlDbType.Int32)
+                };
+            parameters[0].Value = shop_MenuId;
+            int result = dataHelper.ExecuteNonQuery(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
+            return result > 0 ? true : false;
+        }
     }
 }

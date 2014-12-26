@@ -31,5 +31,11 @@ namespace Shop.Template.Services.IServices
         /// <param name="menu"></param>
         /// <returns></returns>
         string AddMenu(Shop_Menu menu);
+        /// <summary>
+        /// 更新菜单
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
+        string DeleteMenu(int shop_MenuId);
     }
 }

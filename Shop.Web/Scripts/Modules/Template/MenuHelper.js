@@ -39,4 +39,16 @@
             }
         });
     },
+    DeleteMenu: function(shop_menuid) {
+        $.ajax({
+            type: "POST",
+            url: "/template/template/DeleteMenu/" + shop_menuid,
+            success: function (data) {
+                var json = eval("(" + data + ")");
+                if (json.Success) {
+                    window.location.href = "/template/template/MenuManage";
+                }
+            }
+        });
+    }
 };

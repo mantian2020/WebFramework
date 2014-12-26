@@ -62,5 +62,22 @@ namespace Shop.Template.Services
            }
            return SerializeHelper.SerializeData(resultInfo);
         }
+
+
+        public string DeleteMenu(int shop_MenuId)
+        {
+            bool result = _shop_menu_dal.DeleteMenu(shop_MenuId);
+            ResultInfo<string> resultInfo = new ResultInfo<string>();
+            resultInfo.Success = result;
+            if (result)
+            {
+                resultInfo.Msg = "删除成功";
+            }
+            else
+            {
+                resultInfo.Msg = "删除失败";
+            }
+            return SerializeHelper.SerializeData(resultInfo);
+        }
     }
 }
