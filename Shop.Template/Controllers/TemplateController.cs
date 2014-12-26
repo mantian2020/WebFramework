@@ -85,6 +85,17 @@ namespace Shop.Template.Controllers
         }
 
         /// <summary>
+        /// 添加菜单
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
+        public ActionResult AddMenu([ModelBinder(typeof (CommonModelBinder<Shop_Menu>))] Shop_Menu menu)
+        {
+            string result = _shop_menu_services.AddMenu(menu);
+            return Content(result);
+        }
+
+        /// <summary>
         /// 保存菜单
         /// </summary>
         /// <returns></returns>

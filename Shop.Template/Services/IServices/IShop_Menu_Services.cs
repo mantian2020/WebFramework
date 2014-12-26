@@ -24,5 +24,12 @@ namespace Shop.Template.Services.IServices
         /// <param name="menu"></param>
         /// <returns></returns>
         string UpdateMenu(Shop_Menu menu);
+
+        /// <summary>
+        /// 添加菜单
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
+        string AddMenu(Shop_Menu menu);
     }
 }

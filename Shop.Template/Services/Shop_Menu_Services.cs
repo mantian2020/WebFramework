@@ -44,5 +44,23 @@ namespace Shop.Template.Services
             }
             return SerializeHelper.SerializeData(resultInfo);
         }
+
+
+        public string AddMenu(Model.Shop_Menu menu)
+        {
+           int menuId = _shop_menu_dal.AddMenu(menu);
+           ResultInfo<string> resultInfo = new ResultInfo<string>();
+           if (menuId >0)
+           {
+               resultInfo.Success = true;
+               resultInfo.Msg = "添加成功";
+           }
+           else
+           {
+               resultInfo.Success = false;
+               resultInfo.Msg = "添加失败";
+           }
+           return SerializeHelper.SerializeData(resultInfo);
+        }
     }
 }

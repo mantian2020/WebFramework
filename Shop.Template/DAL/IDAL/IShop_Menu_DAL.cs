@@ -28,5 +28,12 @@ namespace Shop.Template.DAL.IDAL
         /// <param name="menu"></param>
         /// <returns></returns>
         bool UpdateMenu(Shop_Menu menu);
+
+        /// <summary>
+        /// 添加菜单
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
+        int AddMenu(Shop_Menu menu);
     }
 }

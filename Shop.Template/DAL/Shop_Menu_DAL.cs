@@ -112,5 +112,36 @@ namespace Shop.Template.DAL
             int result = dataHelper.ExecuteNonQuery(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             return result > 0 ? true : false;
         }
+
+
+        public int AddMenu(Shop_Menu menu)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("INSERT INTO `shop_menu` ");
+            strSql.Append("(`Shop_MenuName`, ");
+            strSql.Append("`Shop_MenuUrl`, ");
+            strSql.Append("`Shop_RoleId`, ");
+            strSql.Append("`Shop_ParentId`");
+            strSql.Append(")");
+            strSql.Append("VALUES");
+            strSql.Append("(@Shop_MenuName, ");
+            strSql.Append("@Shop_MenuUrl, ");
+            strSql.Append("@Shop_RoleId, ");
+            strSql.Append("@Shop_ParentId);SELECT LAST_INSERT_ID();");
+            MySqlParameter[] parameters = new MySqlParameter[]
+                {
+                    new MySqlParameter("@Shop_MenuName",MySqlDbType.VarChar),
+                    new MySqlParameter("@Shop_MenuUrl",MySqlDbType.VarChar),
+                    new MySqlParameter("@Shop_RoleId",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_ParentId",MySqlDbType.Int32)
+                };
+            parameters[0].Value = menu.Shop_MenuName;
+            parameters[1].Value = menu.Shop_MenuUrl;
+            parameters[2].Value = menu.Shop_RoleId;
+            parameters[3].Value = menu.Shop_ParentId;
+            object result = dataHelper.ExecuteScalar(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
+            
+            return result !=null ?  Convert.ToInt32(result) : 0;
+        }
     }
 }

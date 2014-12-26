@@ -63,6 +63,7 @@
     @section Script
 {
         @Scripts.Render("~/bootstrap/js/paginator")
+        @Scripts.Render("~/Scripts/Modules/Template/MenuHelper")
         <script type="text/javascript">
             var options = {
                 currentPage: @Model.PageIndex,
@@ -114,12 +115,6 @@
         <div class="row-fluid">
             <div class="form-horizontal">
                 <div class="control-group">
-                    <label class="control-label">菜单ID:</label>
-                    <div class="controls">
-                        <input type="text" class="span8" id="Shop_MenuId">
-                    </div>
-                </div>
-                <div class="control-group">
                     <label class="control-label">菜单名:</label>
                     <div class="controls">
                         <input type="text" class="span8" id="Shop_MenuName">
@@ -148,6 +143,7 @@
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-        <button class="btn btn-primary" oonclick="alert(0);">添加</button>
+        <button class="btn btn-primary" onclick="MenuHelper.AddMenu();">添加</button>
     </div>
 </div>  
+
