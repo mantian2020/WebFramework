@@ -20,7 +20,7 @@ namespace Shop.Template.DAL
         {
             Model.Shop_UserInfo userInfo = null;
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT Shop_UserId,Shop_UserName,Shop_UserPassword    FROM shop_userinfo");
+            strSql.Append("SELECT Shop_UserId,Shop_UserName,Shop_UserPassword,Shop_UserCreateTime,Shop_UserCreator,Shop_UserVaild,Shop_UserRoleList FROM shop_userinfo");
             strSql.Append(" WHERE Shop_UserName=@Shop_UserName AND Shop_UserPassword=@Shop_UserPassword limit 1");
             MySqlParameter[] parameters = new MySqlParameter[]
                 {
@@ -37,6 +37,7 @@ namespace Shop.Template.DAL
                 userInfo.Shop_UserId = dr.IsNull("Shop_UserId") ? 0 : Convert.ToInt32(dr["Shop_UserId"]);
                 userInfo.Shop_UserName = dr.IsNull("Shop_UserName") ? string.Empty : dr["Shop_UserName"].ToString();
                 userInfo.Shop_UserPassword = dr.IsNull("Shop_UserPassword") ? string.Empty : dr["Shop_UserPassword"].ToString();
+                userInfo.Shop_UserRoleList = dr.IsNull("Shop_UserRoleList") ? 0 : Convert.ToInt32(dr["Shop_UserRoleList"]);
             }
             return userInfo;
         }

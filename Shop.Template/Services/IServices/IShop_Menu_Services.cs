@@ -11,7 +11,12 @@ namespace Shop.Template.Services.IServices
 {
     public interface IShop_Menu_Services: IDependency
     {
-        List<Shop_Menu> GetUserMenus(int shop_RoleId);
+        List<Shop_Menu> GetUserMenus(long shop_RoleId, string moduleIds);
+        /// <summary>
+        /// 获取所有的菜单
+        /// </summary>
+        /// <returns></returns>
+        PageInfo<Model.Shop_Menu> GetAllMenus(int? page);
         /// <summary>
         /// 根据菜单ID，获取一条菜单
         /// </summary>

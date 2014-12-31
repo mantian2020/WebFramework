@@ -16,5 +16,6 @@ namespace Shop.Template.Services.IServices
         /// <param name="password"></param>
         /// <returns></returns>
         Shop_UserInfo GetUserInfo(string userName, string password);
+        string CheckLogin(string userName, string password);
     }
 }

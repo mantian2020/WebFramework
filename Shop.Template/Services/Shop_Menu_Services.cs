@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using CommonHelper;
 using CommonHelper.Entity;
 using Shop.Template.DAL.IDAL;
+using Shop.Template.Model;
 using Shop.Template.Services.IServices;
 
 namespace Shop.Template.Services
@@ -18,9 +20,9 @@ namespace Shop.Template.Services
             _shop_menu_dal = shop_menu_dal;
         }
 
-        public List<Model.Shop_Menu> GetUserMenus(int shop_RoleId)
+        public List<Model.Shop_Menu> GetUserMenus(long shop_RoleId, string moduleIds)
         {
-            return _shop_menu_dal.GetUserMenus(shop_RoleId);
+            return _shop_menu_dal.GetUserMenus(shop_RoleId, moduleIds);
         }
 
         public Model.Shop_Menu GetShopMenu(int shop_MenuId)
@@ -78,6 +80,24 @@ namespace Shop.Template.Services
                 resultInfo.Msg = "删除失败";
             }
             return SerializeHelper.SerializeData(resultInfo);
+        }
+
+
+        public PageInfo<Model.Shop_Menu> GetAllMenus(int? page)
+        {
+            int currentIndex = 1;
+            currentIndex = page ?? 1;
+            int pageSize = 2;
+            List<Shop_Menu> lstMenus = _shop_menu_dal.GetAllMenus();
+            List<Shop_Menu> tempMenus = lstMenus.Skip((currentIndex - 1) * pageSize).Take(pageSize).ToList();
+
+            PageInfo<Model.Shop_Menu> pageInfo = new PageInfo<Model.Shop_Menu>();
+            pageInfo.PageIndex = currentIndex;
+            pageInfo.PageSize = pageSize;
+            pageInfo.TotalCount = lstMenus.Count;
+            pageInfo.TotalCount = 0;
+            pageInfo.Items = tempMenus;
+            return pageInfo;
         }
     }
 }

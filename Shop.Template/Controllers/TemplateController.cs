@@ -21,16 +21,19 @@ namespace Shop.Template.Controllers
     {
         private readonly IShop_UserInfo_Services _shop_userinfo_services;
         private readonly IShop_Menu_Services _shop_menu_services;
+        private readonly IShop_Modules_Services _shop_modules_services;
 
         public TemplateController()
         {
         }
 
         public TemplateController(IShop_UserInfo_Services shop_userinfo_services
-                                ,IShop_Menu_Services shop_menu_services)
+                                ,IShop_Menu_Services shop_menu_services
+                                , IShop_Modules_Services shop_modules_services)
         {
             _shop_userinfo_services = shop_userinfo_services;
             _shop_menu_services = shop_menu_services;
+            _shop_modules_services = shop_modules_services;
         }
 
         public ActionResult Login()
@@ -58,19 +61,7 @@ namespace Shop.Template.Controllers
         [LoginFilter(Message = "Template_MenuManage")]
         public ActionResult MenuManage(int? page)
         {
-            int currentIndex = 1;
-            currentIndex = page ?? 1;
-            int pageSize = 2;
-            List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
-            List<Shop_Menu> tempMenus = lstMenus.Skip((currentIndex - 1) * pageSize).Take(pageSize).ToList();
-
-            PageInfo<Shop_Menu> pageInfo = new PageInfo<Shop_Menu>();
-            pageInfo.PageIndex = currentIndex;
-            pageInfo.PageSize = pageSize;
-            pageInfo.TotalCount = lstMenus.Count;
-            pageInfo.Items = tempMenus;
-
-            return View(pageInfo);
+            return View(_shop_menu_services.GetAllMenus(page));
         }
         /// <summary>
         /// 编辑菜单
@@ -121,49 +112,8 @@ namespace Shop.Template.Controllers
         /// <returns></returns>
         public string CheckLogin(string userName, string password)
         {
-            ResultInfo<string> result = new ResultInfo<string>();
-            Shop_UserInfo userInfo = _shop_userinfo_services.GetUserInfo(userName, password);
-            List<Shop_Menu> lstMenus = _shop_menu_services.GetUserMenus(0);
-            //获取一级菜单
-            List<Shop_Menu> lstFirstMenus = lstMenus.Where(o => o.Shop_ParentId == 0).ToList();
-            //封装用户菜单
-            List<Menu> lstUserMenus = new List<Menu>();
-            if (lstFirstMenus != null && lstFirstMenus.Count > 0)
-            {
-                foreach (Shop_Menu item in lstFirstMenus)
-                {
-                    Menu menu = new Menu();
-                    menu.Name = item.Shop_MenuName;
-                    menu.Url = item.Shop_MenuUrl;
-                    menu.SecondMenus = new List<Menu>();
-                    menu.MenuUrls = new List<string>();
-                    menu.MenuUrls.Add(menu.Url);
-                    //获取二级菜单
-                    var temp = lstMenus.Where(o => o.Shop_ParentId == item.Shop_MenuId).ToList();
-                    if (temp.Count > 0)
-                    {
-                        temp.ForEach(
-                            o =>
-                            {
-                                menu.SecondMenus.Add(new Menu() {Name = o.Shop_MenuName, Url = o.Shop_MenuUrl});
-                                menu.MenuUrls.Add(o.Shop_MenuUrl);
-                            });
-                        menu.HaveSecondMenus = true;
-                    }
-                    else
-                    {
-                        menu.HaveSecondMenus = false;
-                    }
-                    lstUserMenus.Add(menu);
-                }
-            }
-            if (userInfo != null)
-            {
-                LoginServices.Login(userInfo.Shop_UserName, lstUserMenus);
-                result.Success = true;
-                result.Msg = "登录成功";
-            }
-            return SerializeHelper.SerializeData<ResultInfo<string>>(result);
+            ModuleServices.RecordModuleIds(_shop_modules_services.GetModuleIds());
+            return _shop_userinfo_services.CheckLogin(userName, password);
         }
 
         /// <summary>

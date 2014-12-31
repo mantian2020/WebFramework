@@ -11,5 +11,10 @@ namespace Shop.Template.Model
         public int Shop_UserId { set; get; }
         public string Shop_UserName { set; get; }
         public string Shop_UserPassword { set; get; }
+        public DateTime Shop_UserCreateTime { set; get; }
+        public string Shop_UserCreator { set; get; }
+        public int Shop_UserVaild { set; get; }
+        public long Shop_UserRoleList { set; get; }
+
     }
 }

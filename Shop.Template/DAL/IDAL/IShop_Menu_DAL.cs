@@ -15,7 +15,12 @@ namespace Shop.Template.DAL.IDAL
         /// </summary>
         /// <param name="shop_RoleId"></param>
         /// <returns></returns>
-        List<Shop_Menu> GetUserMenus(int shop_RoleId);
+        List<Shop_Menu> GetUserMenus(long shop_RoleId,string moduleIds);
+        /// <summary>
+        /// 获取所有的菜单
+        /// </summary>
+        /// <returns></returns>
+        List<Shop_Menu> GetAllMenus();
         /// <summary>
         /// 根据菜单ID，获取一条菜单
         /// </summary>

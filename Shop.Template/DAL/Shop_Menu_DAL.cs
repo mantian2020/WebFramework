@@ -15,33 +15,37 @@ namespace Shop.Template.DAL
     public class Shop_Menu_DAL : IShop_Menu_DAL
     {
         private static IDataHelper dataHelper = new MySqlDataHelper();
-        public List<Model.Shop_Menu> GetUserMenus(int shop_RoleId)
+        public List<Model.Shop_Menu> GetUserMenus(long shop_RoleId,string moduleIds)
         {
             List<Model.Shop_Menu> lstMenus = new List<Shop_Menu>();
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT 	`Shop_MenuId`, ");
-            strSql.Append("`Shop_MenuName`, ");
-            strSql.Append("`Shop_MenuUrl`, ");
-            strSql.Append("`Shop_RoleId`,");
-            strSql.Append("`Shop_ParentId`");
-            strSql.Append(" FROM `shop_menu` ");
-            strSql.Append(" WHERE Shop_RoleId=@Shop_RoleId");
+            strSql.Append(@"SELECT sm.Shop_MenuId,sm.Shop_MenuName,sm.Shop_MenuIcon,sm.Shop_MenuUrl
+                            ,sm.Shop_MenuSort,sm.Shop_ParentId 
+                            FROM shop_menu AS sm
+                            INNER JOIN shop_role_menu AS srm
+                            ON sm.Shop_ModuleId=srm.Shop_ModuleId 
+                            AND sm.Shop_MenuCode&srm.Shop_MenuList=sm.Shop_MenuCode
+                            WHERE srm.Shop_RoleCode&@Shop_RoleCode=srm.Shop_RoleCode 
+                            AND srm.Shop_ModuleId IN (@Shop_ModuleId) AND sm.Shop_MenuVaild=1");
              MySqlParameter[] parameters = new MySqlParameter[]
                 {
-                    new MySqlParameter("@Shop_RoleId",MySqlDbType.Int32)
+                    new MySqlParameter("@Shop_RoleCode",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_ModuleId",MySqlDbType.VarChar)
                 };
-            parameters[0].Value = shop_RoleId;
+             parameters[0].Value = shop_RoleId;
+             parameters[1].Value = moduleIds;
             DataTable dtMenus = dataHelper.GetDataTable(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             if (dtMenus != null && dtMenus.Rows.Count > 0)
             {
                 foreach (DataRow dr in dtMenus.Rows)
                 {
                     Shop_Menu model = new Shop_Menu();
-                    model.Shop_MenuId = dr.IsNull("Shop_MenuId") ? 0 : Convert.ToInt32(dr["Shop_MenuId"]);
                     model.Shop_MenuName = dr.IsNull("Shop_MenuName") ? string.Empty : dr["Shop_MenuName"].ToString();
                     model.Shop_MenuUrl = dr.IsNull("Shop_MenuUrl") ? string.Empty : dr["Shop_MenuUrl"].ToString();
-                    model.Shop_RoleId = dr.IsNull("Shop_RoleId") ? 0 : Convert.ToInt32(dr["Shop_RoleId"]);
+                    model.Shop_MenuIcon = dr.IsNull("Shop_MenuIcon") ? string.Empty : dr["Shop_MenuIcon"].ToString();
+                    model.Shop_MenuSort = dr.IsNull("Shop_MenuSort") ? 0 : Convert.ToInt32(dr["Shop_MenuSort"]);
                     model.Shop_ParentId = dr.IsNull("Shop_ParentId") ? 0 : Convert.ToInt32(dr["Shop_ParentId"]);
+                    model.Shop_MenuId = dr.IsNull("Shop_MenuId") ? 0 : Convert.ToInt32(dr["Shop_MenuId"]);
                     lstMenus.Add(model);
                 }
             }
@@ -60,7 +64,6 @@ namespace Shop.Template.DAL
             strSql.Append("SELECT 	`Shop_MenuId`, ");
             strSql.Append("`Shop_MenuName`, ");
             strSql.Append("`Shop_MenuUrl`, ");
-            strSql.Append("`Shop_RoleId`,");
             strSql.Append("`Shop_ParentId`");
             strSql.Append(" FROM `shop_menu` ");
             strSql.Append(" WHERE Shop_MenuId=@Shop_MenuId limit 1");
@@ -76,7 +79,6 @@ namespace Shop.Template.DAL
                 model.Shop_MenuId = dr.IsNull("Shop_MenuId") ? 0 : Convert.ToInt32(dr["Shop_MenuId"]);
                 model.Shop_MenuName = dr.IsNull("Shop_MenuName") ? string.Empty : dr["Shop_MenuName"].ToString();
                 model.Shop_MenuUrl = dr.IsNull("Shop_MenuUrl") ? string.Empty : dr["Shop_MenuUrl"].ToString();
-                model.Shop_RoleId = dr.IsNull("Shop_RoleId") ? 0 : Convert.ToInt32(dr["Shop_RoleId"]);
                 model.Shop_ParentId = dr.IsNull("Shop_ParentId") ? 0 : Convert.ToInt32(dr["Shop_ParentId"]);
             }
             return model;
@@ -93,7 +95,6 @@ namespace Shop.Template.DAL
             strSql.Append("UPDATE shop_menu");
             strSql.Append(" SET Shop_MenuName=@Shop_MenuName,");
             strSql.Append(" Shop_MenuUrl=@Shop_MenuUrl,");
-            strSql.Append(" Shop_RoleId=@Shop_RoleId,");
             strSql.Append(" Shop_ParentId=@Shop_ParentId");
             strSql.Append(" WHERE Shop_MenuId=@Shop_MenuId");
             MySqlParameter[] parameters = new MySqlParameter[]
@@ -101,14 +102,12 @@ namespace Shop.Template.DAL
                     new MySqlParameter("@Shop_MenuId",MySqlDbType.Int32),
                     new MySqlParameter("@Shop_MenuName",MySqlDbType.VarChar),
                     new MySqlParameter("@Shop_MenuUrl",MySqlDbType.VarChar),
-                    new MySqlParameter("@Shop_RoleId",MySqlDbType.Int32),
                     new MySqlParameter("@Shop_ParentId",MySqlDbType.Int32)
                 };
             parameters[0].Value = menu.Shop_MenuId;
             parameters[1].Value = menu.Shop_MenuName;
             parameters[2].Value = menu.Shop_MenuUrl;
-            parameters[3].Value = menu.Shop_RoleId;
-            parameters[4].Value = menu.Shop_ParentId;
+            parameters[3].Value = menu.Shop_ParentId;
             int result = dataHelper.ExecuteNonQuery(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             return result > 0 ? true : false;
         }
@@ -120,25 +119,21 @@ namespace Shop.Template.DAL
             strSql.Append("INSERT INTO `shop_menu` ");
             strSql.Append("(`Shop_MenuName`, ");
             strSql.Append("`Shop_MenuUrl`, ");
-            strSql.Append("`Shop_RoleId`, ");
             strSql.Append("`Shop_ParentId`");
             strSql.Append(")");
             strSql.Append("VALUES");
             strSql.Append("(@Shop_MenuName, ");
             strSql.Append("@Shop_MenuUrl, ");
-            strSql.Append("@Shop_RoleId, ");
             strSql.Append("@Shop_ParentId);SELECT LAST_INSERT_ID();");
             MySqlParameter[] parameters = new MySqlParameter[]
                 {
                     new MySqlParameter("@Shop_MenuName",MySqlDbType.VarChar),
                     new MySqlParameter("@Shop_MenuUrl",MySqlDbType.VarChar),
-                    new MySqlParameter("@Shop_RoleId",MySqlDbType.Int32),
                     new MySqlParameter("@Shop_ParentId",MySqlDbType.Int32)
                 };
             parameters[0].Value = menu.Shop_MenuName;
             parameters[1].Value = menu.Shop_MenuUrl;
-            parameters[2].Value = menu.Shop_RoleId;
-            parameters[3].Value = menu.Shop_ParentId;
+            parameters[2].Value = menu.Shop_ParentId;
             object result = dataHelper.ExecuteScalar(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             
             return result !=null ?  Convert.ToInt32(result) : 0;
@@ -157,6 +152,49 @@ namespace Shop.Template.DAL
             parameters[0].Value = shop_MenuId;
             int result = dataHelper.ExecuteNonQuery(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             return result > 0 ? true : false;
+        }
+
+
+        public List<Shop_Menu> GetAllMenus()
+        {
+            List<Shop_Menu> lstMenus = new List<Shop_Menu>();
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(@"SELECT 	`Shop_MenuId`, 
+                            `Shop_MenuName`, 
+                            `Shop_MenuUrl`, 
+                            `Shop_MenuCode`, 
+                            `Shop_ParentId`, 
+                            `Shop_MenuCreateTime`, 
+                            `Shop_MenuCreator`, 
+                            `Shop_MenuVaild`, 
+                            `Shop_MenuIcon`, 
+                            `Shop_MenuSort`, 
+                            `Shop_ModuleId`
+                            FROM `shop_menu` 
+                            WHERE Shop_MenuVaild=1");
+            DataTable dtMenus = dataHelper.GetDataTable(Config.ShopConnectionString, CommandType.Text, strSql.ToString());
+            if (dtMenus != null && dtMenus.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dtMenus.Rows)
+                {
+                    Shop_Menu model = new Shop_Menu();
+                    model.Shop_MenuName = dr.IsNull("Shop_MenuName") ? string.Empty : dr["Shop_MenuName"].ToString();
+                    model.Shop_MenuUrl = dr.IsNull("Shop_MenuUrl") ? string.Empty : dr["Shop_MenuUrl"].ToString();
+                    model.Shop_MenuCode = dr.IsNull("Shop_MenuCode") ? 0 : Convert.ToInt32(dr["Shop_MenuCode"]);
+                    model.Shop_ParentId = dr.IsNull("Shop_ParentId") ? 0 : Convert.ToInt32(dr["Shop_ParentId"]);
+                    model.Shop_MenuCreateTime = dr.IsNull("Shop_MenuCreateTime")
+                        ? DateTime.Now
+                        : Convert.ToDateTime(dr["Shop_MenuCreateTime"]);
+                    model.Shop_MenuCreator = dr.IsNull("Shop_MenuCreator") ? string.Empty : dr["Shop_MenuCreator"].ToString();
+                    model.Shop_MenuVaild = dr.IsNull("Shop_MenuVaild") ? 0 : Convert.ToInt32(dr["Shop_MenuVaild"]);
+                    model.Shop_MenuSort = dr.IsNull("Shop_MenuSort") ? 0 : Convert.ToInt32(dr["Shop_MenuSort"]);
+                    model.Shop_MenuIcon = dr.IsNull("Shop_MenuIcon") ? string.Empty : dr["Shop_MenuIcon"].ToString();
+                    model.Shop_MenuId = dr.IsNull("Shop_MenuId") ? 0 : Convert.ToInt32(dr["Shop_MenuId"]);
+                    model.Shop_ModuleId = dr.IsNull("Shop_ModuleId") ? 0 : Convert.ToInt32(dr["Shop_ModuleId"]);
+                    lstMenus.Add(model);
+                }
+            }
+            return lstMenus;
         }
     }
 }
