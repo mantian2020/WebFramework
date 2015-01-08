@@ -154,21 +154,47 @@ namespace Shop.Template.DAL
             strSql.Append("INSERT INTO `shop_menu` ");
             strSql.Append("(`Shop_MenuName`, ");
             strSql.Append("`Shop_MenuUrl`, ");
-            strSql.Append("`Shop_ParentId`");
+            strSql.Append("`Shop_MenuCode`, ");
+            strSql.Append("`Shop_ParentId`,");
+            strSql.Append("`Shop_MenuCreateTime`,");
+            strSql.Append("`Shop_MenuCreator`,");
+            strSql.Append("`Shop_MenuVaild`,");
+            strSql.Append("`Shop_MenuIcon`,");
+            strSql.Append("`Shop_MenuSort`,");
+            strSql.Append("`Shop_ModuleId`");
             strSql.Append(")");
             strSql.Append("VALUES");
             strSql.Append("(@Shop_MenuName, ");
             strSql.Append("@Shop_MenuUrl, ");
-            strSql.Append("@Shop_ParentId);SELECT LAST_INSERT_ID();");
+            strSql.Append("@Shop_MenuCode, ");
+            strSql.Append("@Shop_ParentId, ");
+            strSql.Append("now(), ");
+            strSql.Append("@Shop_MenuCreator, ");
+            strSql.Append("@Shop_MenuVaild, ");
+            strSql.Append("@Shop_MenuIcon, ");
+            strSql.Append("@Shop_MenuSort, ");
+            strSql.Append("@Shop_ModuleId);SELECT LAST_INSERT_ID();");
             MySqlParameter[] parameters = new MySqlParameter[]
                 {
                     new MySqlParameter("@Shop_MenuName",MySqlDbType.VarChar),
                     new MySqlParameter("@Shop_MenuUrl",MySqlDbType.VarChar),
-                    new MySqlParameter("@Shop_ParentId",MySqlDbType.Int32)
+                    new MySqlParameter("@Shop_MenuCode",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_ParentId",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_MenuCreator",MySqlDbType.VarChar),
+                    new MySqlParameter("@Shop_MenuVaild",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_MenuIcon",MySqlDbType.VarChar),
+                    new MySqlParameter("@Shop_MenuSort",MySqlDbType.Int32),
+                    new MySqlParameter("@Shop_ModuleId",MySqlDbType.Int32)
                 };
             parameters[0].Value = menu.Shop_MenuName;
             parameters[1].Value = menu.Shop_MenuUrl;
-            parameters[2].Value = menu.Shop_ParentId;
+            parameters[2].Value = menu.Shop_MenuCode;
+            parameters[3].Value = menu.Shop_ParentId;
+            parameters[4].Value = menu.Shop_MenuCreator;
+            parameters[5].Value = menu.Shop_MenuVaild;
+            parameters[6].Value = menu.Shop_MenuIcon;
+            parameters[7].Value = menu.Shop_MenuSort;
+            parameters[8].Value = menu.Shop_ModuleId;
             object result = dataHelper.ExecuteScalar(Config.ShopConnectionString, CommandType.Text, strSql.ToString(), parameters);
             
             return result !=null ?  Convert.ToInt32(result) : 0;

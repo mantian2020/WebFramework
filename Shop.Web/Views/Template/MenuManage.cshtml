@@ -1,13 +1,20 @@
 ﻿@using System.Web.Optimization
+@using CommonHelper
+@using CoreFramework.Services
 @model CommonHelper.Entity.PageInfo<Shop.Template.Model.Shop_Menu>
 @{
     Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
 }
-
+@{
+    var allModules = SerializeHelper.Deserialize<List<Shop.Template.Model.Shop_Modules>>(ModuleServices.GetModules());
+}
 @section Style{
     <style type="text/css">
         .row {
             margin-top: 5px;
+        }
+        #addMenuDialog .modal-body {
+            max-height: 800px;
         }
     </style>
 }
@@ -125,25 +132,59 @@
                 <div class="control-group">
                     <label class="control-label">菜单名:</label>
                     <div class="controls">
-                        <input type="text" class="span8" id="Shop_MenuName">
+                        <input type="text" class="span6" value="" id="Shop_MenuName">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">菜单地址:</label>
                     <div class="controls">
-                        <input type="text" class="span8" id="Shop_MenuUrl">
+                        <input type="text" class="span6" value="" id="Shop_MenuUrl">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label">权限ID:</label>
+                    <label class="control-label">菜单Code:</label>
                     <div class="controls">
-                        <input type="text" class="span8" id="Shop_RoleId">
+                        <input type="text" class="span6" value="" id="Shop_MenuCode">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">父节点ID:</label>
                     <div class="controls">
-                        <input type="text" class="span8" id="Shop_ParentId">
+                        <input type="text" class="span6" value="" id="Shop_ParentId">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单Icon:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="" id="Shop_MenuIcon">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单排序:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="" id="Shop_MenuSort">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否有效:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" value="1" name="Shop_MenuVaild" checked="checked">有效
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" value="0" name="Shop_MenuVaild">无效
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">所属模块:</label>
+                    <div class="controls">
+                        <select class="span6" id="Shop_ModuleId">
+                            @foreach (var item in allModules)
+                            {
+                                <option value="@item.Shop_Modules_Id">@item.Shop_Modules_Name</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>

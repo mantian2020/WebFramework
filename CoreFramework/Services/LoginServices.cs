@@ -30,6 +30,18 @@ namespace CoreFramework.Services
             sso.SignLogin(new SSOFramework.UserInfo() { UserName = userName,Menus = menus});
         }
         /// <summary>
+        /// 登录用户名
+        /// </summary>
+        public static string LoginUserName {
+            get
+            {
+                UserCookiesService sso = new UserCookiesService();
+                CommonHelper.Entity.ResultInfo<SSOFramework.UserInfo> result = sso.CheckLogin();
+                return result.Data.UserName;
+            }
+        }
+
+        /// <summary>
         /// 退出
         /// </summary>
         public static void SignOut()
