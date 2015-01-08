@@ -26,5 +26,22 @@ namespace CoreFramework.Services
             object result = TianTianCache.CacheStrategy.RetrieveObject("MODULEIDS");
             return result == null ? string.Empty : result.ToString();
         }
+        /// <summary>
+        /// 记录所有模块
+        /// </summary>
+        /// <param name="modules"></param>
+        public static void RecordModules(string modules)
+        {
+            TianTianCache.CacheStrategy.AddObject("MODULES", modules);
+        }
+        /// <summary>
+        /// 从cache中获取模块集合
+        /// </summary>
+        /// <returns></returns>
+        public static string GetModules()
+        {
+            object result = TianTianCache.CacheStrategy.RetrieveObject("MODULES");
+            return result == null ? string.Empty : result.ToString();
+        }
     }
 }

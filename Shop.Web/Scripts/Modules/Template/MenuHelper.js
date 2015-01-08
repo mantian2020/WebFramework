@@ -1,12 +1,23 @@
 ﻿var MenuHelper = {
     //更新菜单
     UpdateMenu: function () {
+        var _Shop_MenuVaild = 0;
+        $("input[name='Shop_MenuVaild']").each(function() {
+            if ($(this).prop("checked")) {
+                _Shop_MenuVaild = $(this).val();
+            }
+        });
+        
         var para = {
             Shop_MenuId: $("#Shop_MenuId").val(),
             Shop_MenuName: $("#Shop_MenuName").val(),
             Shop_MenuUrl: $("#Shop_MenuUrl").val(),
-            Shop_RoleId: $("#Shop_RoleId").val(),
-            Shop_ParentId: $("#Shop_ParentId").val()
+            Shop_MenuCode: $("#Shop_MenuCode").val(),
+            Shop_ParentId: $("#Shop_ParentId").val(),
+            Shop_MenuIcon: $("#Shop_MenuIcon").val(),
+            Shop_MenuSort: $("#Shop_MenuSort").val(),
+            Shop_MenuVaild: _Shop_MenuVaild,
+            Shop_ModuleId: $("#Shop_ModuleId").val()
         };
         $.ajax({
             type: "POST",

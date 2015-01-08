@@ -1,8 +1,14 @@
 ﻿@using System.Web.Optimization
+@using CommonHelper
+@using CoreFramework.Services
 @model Shop.Template.Model.Shop_Menu
 @{
     Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
 }
+@{
+    var allModules = SerializeHelper.Deserialize<List<Shop.Template.Model.Shop_Modules>>(ModuleServices.GetModules());
+}
+
 @section Crumb
 {
     <a href="/template/template/MenuManage" class="tip-bottom">
@@ -37,9 +43,49 @@
                     </div>
                 </div>
                 <div class="control-group">
+                    <label class="control-label">菜单Code:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuCode" id="Shop_MenuCode">
+                    </div>
+                </div>
+                <div class="control-group">
                     <label class="control-label">父节点ID:</label>
                     <div class="controls">
                         <input type="text" class="span6" value="@Model.Shop_ParentId" id="Shop_ParentId">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单Icon:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuIcon" id="Shop_MenuIcon">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">菜单排序:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_MenuSort" id="Shop_MenuSort">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否有效:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" @string.Format("{0}", Model.Shop_MenuVaild == 1 ? "checked='checked'" : string.Empty) value="1" name="Shop_MenuVaild">有效
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" @string.Format("{0}", Model.Shop_MenuVaild == 0 ? "checked='checked'" : string.Empty) value="0" name="Shop_MenuVaild">无效
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">所属模块:</label>
+                    <div class="controls">
+                        <select class="span6" id="Shop_ModuleId">
+                            @foreach (var item in allModules)
+                            {
+                                <option @string.Format("{0}", Model.Shop_ModuleId == item.Shop_Modules_Id ? "selected='selected'" : string.Empty) value="@item.Shop_Modules_Id">@item.Shop_Modules_Name</option>
+                            }
+                        </select>
                     </div>
                 </div>
                 <div class="form-actions">

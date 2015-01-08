@@ -1,4 +1,3 @@
-E:\工作项目\git\WebFramework\CacheFramework\obj\Debug\CacheFramework.csprojResolveAssemblyReference.cache
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\CacheFramework.dll
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\CacheFramework.pdb
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\CommonHelper.dll
@@ -9,5 +8,6 @@ E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\ICSharpCode.SharpZipLi
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\CommonHelper.pdb
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\log4net.xml
 E:\工作项目\git\WebFramework\CacheFramework\bin\Debug\Newtonsoft.Json.xml
+E:\工作项目\git\WebFramework\CacheFramework\obj\Debug\CacheFramework.csprojResolveAssemblyReference.cache
 E:\工作项目\git\WebFramework\CacheFramework\obj\Debug\CacheFramework.dll
 E:\工作项目\git\WebFramework\CacheFramework\obj\Debug\CacheFramework.pdb

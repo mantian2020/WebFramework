@@ -231,6 +231,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{ba8b13e7-a802-4d35-88b9-e02fae08993a}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CoreFramework\CoreFramework.csproj">
       <Project>{f57d8bb9-7d1c-4844-adc6-0e7a8eff7c87}</Project>
       <Name>CoreFramework</Name>

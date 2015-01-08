@@ -113,6 +113,7 @@ namespace Shop.Template.Controllers
         public string CheckLogin(string userName, string password)
         {
             ModuleServices.RecordModuleIds(_shop_modules_services.GetModuleIds());
+            ModuleServices.RecordModules(_shop_modules_services.GetModules());
             return _shop_userinfo_services.CheckLogin(userName, password);
         }
 

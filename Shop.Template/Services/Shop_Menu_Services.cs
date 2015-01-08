@@ -95,7 +95,6 @@ namespace Shop.Template.Services
             pageInfo.PageIndex = currentIndex;
             pageInfo.PageSize = pageSize;
             pageInfo.TotalCount = lstMenus.Count;
-            pageInfo.TotalCount = 0;
             pageInfo.Items = tempMenus;
             return pageInfo;
         }
