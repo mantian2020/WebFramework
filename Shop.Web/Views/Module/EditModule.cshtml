@@ -1,0 +1,79 @@
+﻿@using System.Web.Optimization
+@model Shop.Module.Model.Shop_Modules
+@{
+    Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
+}
+
+@section Crumb
+{
+    <a href="/Module/Module/ModuleManage" class="tip-bottom">
+    <i class="icon-home"></i> 模块管理
+</a>
+    <a href="#" class="current">模块编辑</a>
+}
+<div class="span11">
+    <div class="widget-box">
+        <div class="widget-title">
+            <span class="icon"> <i class="icon-align-justify"></i> </span>
+            <h5>菜单编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">模块ID:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" disabled="disabled" value="@Model.Shop_Modules_Id" id="Shop_Modules_Id">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">模块名:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_Modules_Name" id="Shop_Modules_Name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">模块描述:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_Modules_Description" id="Shop_Modules_Description">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否开启:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" value="1" name="Shop_Modules_IsStart" @string.Format("{0}", Model.Shop_Modules_IsStart == 1 ? "checked='checked'" : string.Empty) />开启
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" value="0" name="Shop_Modules_IsStart" @string.Format("{0}", Model.Shop_Modules_IsStart == 0 ? "checked='checked'" : string.Empty)>关闭
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否有效:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" value="1" name="Shop_Modules_IsValid" @string.Format("{0}", Model.Shop_Modules_IsValid == 1 ? "checked='checked'" : string.Empty) />有效
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" value="0" name="Shop_Modules_IsValid" @string.Format("{0}", Model.Shop_Modules_IsValid == 0 ? "checked='checked'" : string.Empty)>无效
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">模块排序:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="@Model.Shop_Modules_Sort" id="Shop_Modules_Sort">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-success" onclick="ModuleHelper.UpdateShopModules();">保存</button>
+                    <a class="btn btn-success" href="/Module/Module/ModuleManage">返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script
+{
+    @Scripts.Render("~/Scripts/Modules/Module/ModuleHelper")
+}

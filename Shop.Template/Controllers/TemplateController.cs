@@ -23,10 +23,6 @@ namespace Shop.Template.Controllers
         private readonly IShop_Menu_Services _shop_menu_services;
         private readonly IShop_Modules_Services _shop_modules_services;
 
-        public TemplateController()
-        {
-        }
-
         public TemplateController(IShop_UserInfo_Services shop_userinfo_services
                                 ,IShop_Menu_Services shop_menu_services
                                 , IShop_Modules_Services shop_modules_services)

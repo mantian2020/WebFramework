@@ -204,7 +204,7 @@ namespace Shop.Template.DAL
         public bool DeleteMenu(int shop_MenuId)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("DELETE FROM `shop_menu`  ");
+            strSql.Append("UPDATE `shop_menu` SET `Shop_MenuVaild` = 0");
             strSql.Append("WHERE Shop_MenuId=@Shop_MenuId");
             MySqlParameter[] parameters = new MySqlParameter[]
                 {

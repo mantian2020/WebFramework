@@ -51,11 +51,10 @@
     <Compile Include="Model\Shop_Modules.cs" />
     <Compile Include="ModuleAreaRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IServices\IShop_Modules_Services.cs" />
+    <Compile Include="Services\Shop_Modules_Services.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\Interface\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
       <Project>{ba8b13e7-a802-4d35-88b9-e02fae08993a}</Project>

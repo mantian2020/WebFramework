@@ -12,6 +12,9 @@ namespace Shop.Module.DAL.IDAL
     public interface IShop_Modules_DAL:IDependency
     {
         int AddShopModules(Shop_Modules model);
-        int UpdateShopModules(Shop_Modules model);
+        bool UpdateShopModules(Shop_Modules model);
+        bool DeleteShopModules(int moduleId);
+        List<Shop_Modules> GetShopModules();
+        Shop_Modules GetShopModule(int moduleId);
     }
 }

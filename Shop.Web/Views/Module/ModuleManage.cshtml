@@ -1,4 +1,172 @@
-﻿@{
+﻿@using System.Web.Optimization
+@model CommonHelper.Entity.PageInfo<Shop.Module.Model.Shop_Modules>
+@{
     Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
 }
+@section Style{
+    <style type="text/css">
+        .row {
+            margin-top: 5px;
+        }
 
+        #addMenuDialog .modal-body {
+            max-height: 800px;
+        }
+    </style>
+}
+@section Crumb
+{
+    <a href="/Module/Module/ModuleManage" class="tip-bottom">
+    <i class="icon-home"></i> 模块管理
+</a>
+    <a href="#" class="current">模块列表</a>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="span11">
+            <a href="#addModuleDialog" role="button" class="btn btn-primary" data-toggle="modal">添加模块</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span11">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>模块ID</th>
+                        <th>模块名</th>
+                        <th>模块描述</th>
+                        <th>是否开启</th>
+                        <th>是否有效</th>
+                        <th>模块排序</th>
+                        <th>创建时间</th>
+                        <th>创建人</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr class="@string.Format("{0}", item.Shop_Modules_Id % 2 == 0 ? "odd gradeX" : "even gradeC")">
+                            <td>@item.Shop_Modules_Id</td>
+                            <td>@item.Shop_Modules_Name</td>
+                            <td>@item.Shop_Modules_Description</td>
+                            <td>@item.Shop_Modules_IsStart</td>
+                            <td>@item.Shop_Modules_IsValid</td>
+                            <td>@item.Shop_Modules_Sort</td>
+                            <td>@item.Shop_Modules_AddTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                            <td>@item.Shop_Modules_Creator</td>
+                            <td>
+                                <a class="btn btn-primary btn-mini" href="/Module/Module/EditModule/@item.Shop_Modules_Id">编辑</a>
+                                <button class="btn btn-primary btn-mini" onclick="ModuleHelper.DeleteShopModules(@item.Shop_Modules_Id);">删除</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div id="pagination"></div>
+        </div>
+    </div>
+</div>
+
+@section Script
+{
+    @Scripts.Render("~/bootstrap/js/paginator")
+    @Scripts.Render("~/Scripts/Modules/Module/ModuleHelper")
+    <script type="text/javascript">
+            var options = {
+                currentPage: @Model.PageIndex,
+                totalPages: @Model.TotalPageCount,
+                alignment: "right",
+                size: "normal",
+                itemContainerClass: function (type, page, current) {
+                    return (page === current) ? "active" : "pointer-cursor";
+                },
+                itemTexts: function (type, page, current) {
+                    switch (type) {
+                        case "first":
+                            return "首页";
+                        case "prev":
+                            return "前一页";
+                        case "next":
+                            return "下一页";
+                        case "last":
+                            return "末页";
+                        case "page":
+                            return page;
+                    }
+                    return page;
+                },
+                onPageClicked: function (e, originalEvent, type, page) {
+                    /*
+                    e.stopImmediatePropagation();
+                    var currentTarget = $(e.currentTarget);
+                    var pages = currentTarget.bootstrapPaginator("getPages");
+                    currentTarget.bootstrapPaginator("show", page);*/
+                },
+                pageUrl: function (type, page, current) {
+                    return "/Module/Module/ModuleManage/" + page;//return "/card/flow?page=" + page   ; //分页的链接,传递的参数为page
+                }
+            };
+
+            $('#pagination').bootstrapPaginator(options);
+    </script>
+}
+
+<!-- Modal -->
+<div id="addModuleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModuleDialogLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="addModuleDialogLabel">添加模块</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">模块名:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="" id="Shop_Modules_Name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">模块描述:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="" id="Shop_Modules_Description">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否开启:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" value="1" name="Shop_Modules_IsStart" checked="checked" />开启
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" value="0" name="Shop_Modules_IsStart">关闭
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">是否有效:</label>
+                    <div class="controls">
+                        <label class="checkbox inline">
+                            <input type="radio" value="1" name="Shop_Modules_IsValid" checked="checked" />有效
+                        </label>
+                        <label class="checkbox inline">
+                            <input type="radio" value="0" name="Shop_Modules_IsValid">无效
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">模块排序:</label>
+                    <div class="controls">
+                        <input type="text" class="span6" value="" id="Shop_Modules_Sort">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        <button class="btn btn-primary" onclick="ModuleHelper.AddShopModules();">添加</button>
+    </div>
+</div>  

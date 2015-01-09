@@ -31,7 +31,16 @@ namespace Shop.Module.Model
         /// <summary>
         /// 模块添加时间
         /// </summary>
-        public int Shop_Modules_AddTime { set; get; }
+        public DateTime Shop_Modules_AddTime { set; get; }
+        /// <summary>
+        /// 模块排序
+        /// </summary>
+        public int Shop_Modules_Sort { set; get; }
+        /// <summary>
+        /// 创建人
+        /// </summary>
+        public string Shop_Modules_Creator { set; get; }
+
 
     }
 }

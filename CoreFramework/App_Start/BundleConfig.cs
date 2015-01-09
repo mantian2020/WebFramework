@@ -27,6 +27,7 @@ namespace CoreFramework
             bundles.Add(new ScriptBundle("~/bootstrap/js/paginator").Include("~/bootstrap/js/bootstrap-paginator.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Modules/Template/MenuHelper").Include("~/Scripts/Modules/Template/MenuHelper.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/Modules/Module/ModuleHelper").Include("~/Scripts/Modules/Module/ModuleHelper.js"));
 
 
             /*bundles使用：
